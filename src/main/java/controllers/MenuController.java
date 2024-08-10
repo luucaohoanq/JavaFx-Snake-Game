@@ -1,5 +1,6 @@
 package controllers;
 
+import enums.Hover;
 import java.util.Arrays;
 import java.util.List;
 import styles.UIHovers;
@@ -89,9 +90,9 @@ public class MenuController implements MouseListener, ActionListener {
                 .filter(button -> e.getSource() == button)
                 .forEach(button -> {
                     if (menuView.getStatusToggle()) {
-                        uiHovers.setHoverButton(true, "dark", button);
+                        uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "dark", button);
                     } else {
-                        uiHovers.setHoverButton(true, "light", button);
+                        uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "light", button);
                     }
                 });
         }
@@ -105,9 +106,9 @@ public class MenuController implements MouseListener, ActionListener {
                 .filter(button -> e.getSource() == button)
                 .forEach(button -> {
                     if (menuView.getStatusToggle()) {
-                        uiHovers.setHoverButton(false, "dark", button);
+                        uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "dark", button);
                     } else {
-                        uiHovers.setHoverButton(false, "light", button);
+                        uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "light", button);
                     }
                 });
         }
@@ -119,7 +120,7 @@ public class MenuController implements MouseListener, ActionListener {
             System.out.println("user click Off sound");
             menuView.setAudio(false);
         } else if (e.getActionCommand().equals("On")) {
-            menuView.setAudio(true);
+            menuView.setAudio(Hover.ENABLE.isStatus());
         }
     }
 
@@ -195,41 +196,41 @@ public class MenuController implements MouseListener, ActionListener {
         public void mouseEntered(MouseEvent e) {
             if (menuModern.getStatusToggle()) {
                 if (e.getSource() == menuModern.getJButton_NoMaze()) {
-                    uiHovers.setHoverButton(true, "dark", menuModern.getJButton_NoMaze());
+                    uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "dark", menuModern.getJButton_NoMaze());
                 }
                 if (e.getSource() == menuModern.getJButton_Box()) {
-                    uiHovers.setHoverButton(true, "dark", menuModern.getJButton_Box());
+                    uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "dark", menuModern.getJButton_Box());
                 }
                 if (e.getSource() == menuModern.getJButton_Tunnel()) {
-                    uiHovers.setHoverButton(true, "dark", menuModern.getJButton_Tunnel());
+                    uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "dark", menuModern.getJButton_Tunnel());
                 }
                 if (e.getSource() == menuModern.getJButton_Mill()) {
-                    uiHovers.setHoverButton(true, "dark", menuModern.getJButton_Mill());
+                    uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "dark", menuModern.getJButton_Mill());
                 }
                 if (e.getSource() == menuModern.getJButton_Rails()) {
-                    uiHovers.setHoverButton(true, "dark", menuModern.getJButton_Rails());
+                    uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "dark", menuModern.getJButton_Rails());
                 }
                 if (e.getSource() == menuModern.getJButton_Apartment()) {
-                    uiHovers.setHoverButton(true, "dark", menuModern.getJButton_Apartment());
+                    uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "dark", menuModern.getJButton_Apartment());
                 }
             } else {
                 if (e.getSource() == menuModern.getJButton_NoMaze()) {
-                    uiHovers.setHoverButton(true, "light", menuModern.getJButton_NoMaze());
+                    uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "light", menuModern.getJButton_NoMaze());
                 }
                 if (e.getSource() == menuModern.getJButton_Box()) {
-                    uiHovers.setHoverButton(true, "light", menuModern.getJButton_Box());
+                    uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "light", menuModern.getJButton_Box());
                 }
                 if (e.getSource() == menuModern.getJButton_Tunnel()) {
-                    uiHovers.setHoverButton(true, "light", menuModern.getJButton_Tunnel());
+                    uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "light", menuModern.getJButton_Tunnel());
                 }
                 if (e.getSource() == menuModern.getJButton_Mill()) {
-                    uiHovers.setHoverButton(true, "light", menuModern.getJButton_Mill());
+                    uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "light", menuModern.getJButton_Mill());
                 }
                 if (e.getSource() == menuModern.getJButton_Rails()) {
-                    uiHovers.setHoverButton(true, "light", menuModern.getJButton_Rails());
+                    uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "light", menuModern.getJButton_Rails());
                 }
                 if (e.getSource() == menuModern.getJButton_Apartment()) {
-                    uiHovers.setHoverButton(true, "light", menuModern.getJButton_Apartment());
+                    uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "light", menuModern.getJButton_Apartment());
                 }
             }
         }
@@ -238,41 +239,41 @@ public class MenuController implements MouseListener, ActionListener {
         public void mouseExited(MouseEvent e) {
             if (menuModern.getStatusToggle()) {
                 if (e.getSource() == menuModern.getJButton_NoMaze()) {
-                    uiHovers.setHoverButton(false, "dark", menuModern.getJButton_NoMaze());
+                    uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "dark", menuModern.getJButton_NoMaze());
                 }
                 if (e.getSource() == menuModern.getJButton_Box()) {
-                    uiHovers.setHoverButton(false, "dark", menuModern.getJButton_Box());
+                    uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "dark", menuModern.getJButton_Box());
                 }
                 if (e.getSource() == menuModern.getJButton_Tunnel()) {
-                    uiHovers.setHoverButton(false, "dark", menuModern.getJButton_Tunnel());
+                    uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "dark", menuModern.getJButton_Tunnel());
                 }
                 if (e.getSource() == menuModern.getJButton_Mill()) {
-                    uiHovers.setHoverButton(false, "dark", menuModern.getJButton_Mill());
+                    uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "dark", menuModern.getJButton_Mill());
                 }
                 if (e.getSource() == menuModern.getJButton_Rails()) {
-                    uiHovers.setHoverButton(false, "dark", menuModern.getJButton_Rails());
+                    uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "dark", menuModern.getJButton_Rails());
                 }
                 if (e.getSource() == menuModern.getJButton_Apartment()) {
-                    uiHovers.setHoverButton(false, "dark", menuModern.getJButton_Apartment());
+                    uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "dark", menuModern.getJButton_Apartment());
                 }
             } else {
                 if (e.getSource() == menuModern.getJButton_NoMaze()) {
-                    uiHovers.setHoverButton(false, "light", menuModern.getJButton_NoMaze());
+                    uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "light", menuModern.getJButton_NoMaze());
                 }
                 if (e.getSource() == menuModern.getJButton_Box()) {
-                    uiHovers.setHoverButton(false, "light", menuModern.getJButton_Box());
+                    uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "light", menuModern.getJButton_Box());
                 }
                 if (e.getSource() == menuModern.getJButton_Tunnel()) {
-                    uiHovers.setHoverButton(false, "light", menuModern.getJButton_Tunnel());
+                    uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "light", menuModern.getJButton_Tunnel());
                 }
                 if (e.getSource() == menuModern.getJButton_Mill()) {
-                    uiHovers.setHoverButton(false, "light", menuModern.getJButton_Mill());
+                    uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "light", menuModern.getJButton_Mill());
                 }
                 if (e.getSource() == menuModern.getJButton_Rails()) {
-                    uiHovers.setHoverButton(false, "light", menuModern.getJButton_Rails());
+                    uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "light", menuModern.getJButton_Rails());
                 }
                 if (e.getSource() == menuModern.getJButton_Apartment()) {
-                    uiHovers.setHoverButton(false, "light", menuModern.getJButton_Apartment());
+                    uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "light", menuModern.getJButton_Apartment());
                 }
             }
         }

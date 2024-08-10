@@ -1,5 +1,6 @@
 package controllers;
 
+import enums.Hover;
 import java.util.Arrays;
 import java.util.List;
 import javax.swing.JButton;
@@ -133,36 +134,36 @@ public class RegisterController implements ActionListener, MouseListener {
             .forEach(inputField -> {
                 if (!registerView.getStatusToggle()) {
                     if (inputField == registerView.getJTextField_Right_Middle_Email()) {
-                        uiHovers.setHoverEmail(true, "light");
+                        uiHovers.setHoverEmail(Hover.ENABLE.isStatus(), "light");
                     }
                     if (inputField == registerView.getJTextField_Right_Middle_FirstName()) {
-                        uiHovers.setHoverFirstName(true, "light");
+                        uiHovers.setHoverFirstName(Hover.ENABLE.isStatus(), "light");
                     }
                     if (inputField == registerView.getJTextField_Right_Middle_LastName()) {
-                        uiHovers.setHoverLastName(true, "light");
+                        uiHovers.setHoverLastName(Hover.ENABLE.isStatus(), "light");
                     }
                     if (inputField == registerView.getJPasswordField_Right_Middle_Password()) {
-                        uiHovers.setHoverPassword(true, "light");
+                        uiHovers.setHoverPassword(Hover.ENABLE.isStatus(), "light");
                     }
                     if (inputField
                         == registerView.getJPasswordField_Right_Middle_Confirm_Password()) {
-                        uiHovers.setHoverConfirmPassword(true, "light");
+                        uiHovers.setHoverConfirmPassword(Hover.ENABLE.isStatus(), "light");
                     }
                 } else {
                     if(inputField == registerView.getJTextField_Right_Middle_Email()){
-                        uiHovers.setHoverEmail(true, "dark");
+                        uiHovers.setHoverEmail(Hover.ENABLE.isStatus(), "dark");
                     }
                     if(inputField == registerView.getJTextField_Right_Middle_FirstName()){
-                        uiHovers.setHoverFirstName(true,"dark");
+                        uiHovers.setHoverFirstName(Hover.ENABLE.isStatus(),"dark");
                     }
                     if(inputField == registerView.getJTextField_Right_Middle_LastName()){
-                        uiHovers.setHoverLastName(true, "dark");
+                        uiHovers.setHoverLastName(Hover.ENABLE.isStatus(), "dark");
                     }
                     if(inputField == registerView.getJPasswordField_Right_Middle_Password()){
-                        uiHovers.setHoverPassword(true, "dark");
+                        uiHovers.setHoverPassword(Hover.ENABLE.isStatus(), "dark");
                     }
                     if(inputField == registerView.getJPasswordField_Right_Middle_Confirm_Password()){
-                        uiHovers.setHoverConfirmPassword(true, "dark");
+                        uiHovers.setHoverConfirmPassword(Hover.ENABLE.isStatus(), "dark");
                     }
                 }
             });
@@ -172,12 +173,12 @@ public class RegisterController implements ActionListener, MouseListener {
             .forEach(button -> {
                 if (button.getText().equals("Submit")) {
                     if (!registerView.getStatusToggle()) {
-                        uiHovers.setHoverButton(true, "light");
+                        uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "light");
                     } else {
-                        uiHovers.setHoverButton(true, "dark");
+                        uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "dark");
                     }
                 } else {
-                    uiHovers.setHoverOther(true);
+                    uiHovers.setHoverOther(Hover.ENABLE.isStatus());
                 }
             });
     }
@@ -188,17 +189,17 @@ public class RegisterController implements ActionListener, MouseListener {
             .filter(inputField -> e.getSource() == inputField)
             .forEach(inputField -> {
                 if (!registerView.getStatusToggle()) {
-                    uiHovers.setHoverEmail(false, "light");
-                    uiHovers.setHoverFirstName(false, "light");
-                    uiHovers.setHoverLastName(false, "light");
-                    uiHovers.setHoverPassword(false, "light");
-                    uiHovers.setHoverConfirmPassword(false, "light");
+                    uiHovers.setHoverEmail(Hover.DISABLE.isStatus(), "light");
+                    uiHovers.setHoverFirstName(Hover.DISABLE.isStatus(), "light");
+                    uiHovers.setHoverLastName(Hover.DISABLE.isStatus(), "light");
+                    uiHovers.setHoverPassword(Hover.DISABLE.isStatus(), "light");
+                    uiHovers.setHoverConfirmPassword(Hover.DISABLE.isStatus(), "light");
                 } else {
-                    uiHovers.setHoverEmail(false, "dark");
-                    uiHovers.setHoverFirstName(false, "dark");
-                    uiHovers.setHoverLastName(false, "dark");
-                    uiHovers.setHoverPassword(false, "dark");
-                    uiHovers.setHoverConfirmPassword(false, "dark");
+                    uiHovers.setHoverEmail(Hover.DISABLE.isStatus(), "dark");
+                    uiHovers.setHoverFirstName(Hover.DISABLE.isStatus(), "dark");
+                    uiHovers.setHoverLastName(Hover.DISABLE.isStatus(), "dark");
+                    uiHovers.setHoverPassword(Hover.DISABLE.isStatus(), "dark");
+                    uiHovers.setHoverConfirmPassword(Hover.DISABLE.isStatus(), "dark");
 
                 }
             });
@@ -208,12 +209,12 @@ public class RegisterController implements ActionListener, MouseListener {
             .forEach(button -> {
                 if (button.getText().equals("Submit")) {
                     if (!registerView.getStatusToggle()) {
-                        uiHovers.setHoverButton(false, "light");
+                        uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "light");
                     } else {
-                        uiHovers.setHoverButton(false, "dark");
+                        uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "dark");
                     }
                 } else {
-                    uiHovers.setHoverOther(false);
+                    uiHovers.setHoverOther(Hover.DISABLE.isStatus());
                 }
             });
     }
