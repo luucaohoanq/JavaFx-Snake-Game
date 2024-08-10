@@ -1,6 +1,6 @@
 package modules.sound;
 
-import errors.FileException;
+import exceptions.FileException;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;

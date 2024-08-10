@@ -1,4 +1,4 @@
-package modules.board;
+package views.game;
 
 import constants.ResourcePaths;
 import styles.UISizes;
@@ -6,6 +6,7 @@ import styles.UISizes;
 import javax.swing.*;
 import java.awt.*;
 import java.io.InputStream;
+import views.base.Board;
 
 public class Rails extends Board {
 

@@ -1,4 +1,4 @@
-package views;
+package views.base;
 
 import constants.ResourcePaths;
 import java.awt.BorderLayout;

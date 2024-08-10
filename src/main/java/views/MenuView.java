@@ -16,6 +16,7 @@ import styles.UIColors;
 import styles.UIHovers;
 import styles.UIImages;
 import styles.UISizes;
+import views.base.AppComponent;
 
 public class MenuView extends AppComponent implements ToggleHandler {
     boolean isActive;

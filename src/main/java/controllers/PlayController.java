@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 
 import views.LoginView;
 import views.MenuView;
-import views.Snake;
+import views.game.Snake;
 
 public class PlayController implements ActionListener {
     public static MenuView menuView;

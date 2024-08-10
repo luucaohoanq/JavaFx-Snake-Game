@@ -15,10 +15,11 @@ import styles.UIBorders;
 import styles.UIColors;
 import styles.UIFonts;
 import styles.UILabels;
+import views.base.MyFrame;
 
 @Deprecated
 @Getter
-public non-sealed class RegisterView extends MyFrame implements ToggleHandler {
+public class RegisterView extends MyFrame implements ToggleHandler {
 
     private RegisterModel registerModel;
 

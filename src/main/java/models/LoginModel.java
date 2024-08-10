@@ -1,6 +1,6 @@
 package models;
 
-import errors.DataException;
+import exceptions.DataException;
 import modules.user.UserEntity;
 import modules.user.UserDAO;
 import utils.PBKDF2;

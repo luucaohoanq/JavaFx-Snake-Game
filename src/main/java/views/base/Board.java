@@ -1,4 +1,4 @@
-package modules.board;
+package views.base;
 
 import views.UIPrompts;
 import constants.ResourcePaths;

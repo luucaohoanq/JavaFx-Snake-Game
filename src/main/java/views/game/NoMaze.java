@@ -1,9 +1,10 @@
-package modules.board;
+package views.game;
 
 import constants.ResourcePaths;
 import styles.UISizes;
 
 import java.io.InputStream;
+import views.base.Board;
 
 public class NoMaze extends Board {
 

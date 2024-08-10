@@ -1,4 +1,4 @@
-package errors;
+package exceptions;
 
 public class FileException extends Exception {
     public FileException(String message) {

@@ -1,4 +1,4 @@
-package views;
+package views.base;
 
 import constants.Info;
 import controllers.ScoreController;
@@ -19,9 +19,10 @@ import styles.UIColors;
 import styles.UIImages;
 import styles.UILabels;
 import styles.UISizes;
+import views.MenuView;
+import views.ScoreView;
 
-public abstract sealed class MyFrame extends AppComponent implements ToggleHandler permits
-    LoginView, RegisterView {
+public abstract class MyFrame extends AppComponent implements ToggleHandler{
 
     public MyFrame() {
         setTitle(UILabels.WINDOW);

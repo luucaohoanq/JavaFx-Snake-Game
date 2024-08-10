@@ -5,7 +5,7 @@ import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JTextField;
-import views.AppComponent;
+import views.base.AppComponent;
 
 public record UIHovers<T extends AppComponent>(T frame) {
 

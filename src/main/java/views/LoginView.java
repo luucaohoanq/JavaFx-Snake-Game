@@ -19,9 +19,10 @@ import styles.UIColors;
 import styles.UIFonts;
 import styles.UILabels;
 import styles.UISizes;
+import views.base.MyFrame;
 
 @Getter
-public non-sealed class LoginView extends MyFrame implements ToggleHandler{
+public class LoginView extends MyFrame implements ToggleHandler{
 
     private CardLayout cardLayout;
     private final LoginModel loginModel;

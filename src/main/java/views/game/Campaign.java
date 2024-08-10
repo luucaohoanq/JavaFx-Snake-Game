@@ -1,4 +1,6 @@
-package modules.board;
+package views.game;
+
+import views.base.Board;
 
 public class Campaign extends Board {
     @Override

@@ -7,7 +7,7 @@ import java.net.URL;
 import javax.swing.ImageIcon;
 
 import constants.ResourcePaths;
-import views.MyFrame;
+import views.base.MyFrame;
 
 public class UIImages {
     public static final URL iconURL = MyFrame.class.getResource(ResourcePaths.URL_KEY_ICON);

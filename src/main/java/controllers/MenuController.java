@@ -4,12 +4,12 @@ import enums.Hover;
 import java.util.Arrays;
 import java.util.List;
 import styles.UIHovers;
-import views.AppComponent;
+import views.base.AppComponent;
 import views.UIPrompts;
 import constants.ResourcePaths;
 import modules.sound.AudioHandler;
 import views.MenuView;
-import views.Snake;
+import views.game.Snake;
 
 import javax.swing.*;
 import java.awt.*;

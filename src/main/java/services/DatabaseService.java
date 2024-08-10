@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 import constants.ErrorMessages;
-import errors.DBException;
+import exceptions.DBException;
 import utils.EnvUtils;
 
 public class DatabaseService {
