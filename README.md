@@ -1,15 +1,20 @@
-# Login
-![image](https://github.com/lcaohoanq/JavaFx-Form/assets/136492579/78b028ca-7427-4682-8c9d-c037fa9c3b40)
-# Sign up
-![image](https://github.com/lcaohoanq/JavaFx-Form/assets/136492579/6847f890-78c2-4855-9b74-ef62f7d9d02a)
+![Animation](https://github.com/lcaohoanq/Java-Snake-Game/assets/136492579/1c4782eb-ccf4-437e-a6b1-900ec68a58a3)
 
-- `JDK`    : need `JDK 18` to run this application.
-- `MySql`  : table structure  
-![Screenshot 2024-03-14 025832](https://github.com/lcaohoanq/JavaFx-Login-Signup-Form/assets/136492579/9ecda775-64fe-4d2b-8646-a1244a977343)
-- `.env` : fill the content below as your configuration
-```shell
-DB_URL=jdbc:mysql://<your_port>/users_schema
-DB_USER=<your_db_username>
-DB_PASSWORD=<your_db_password>
+## Need to install
+- JDK 18.0.2.1
+- Maven
+- Docker, run docker container mysql with:
+```bash
+docker-compose up -d
 ```
 
+```bash
+# verify connection
+mysql -h 127.0.0.1 -P 3307 -u lcaohoanq -p
+use snake_game_app;
+select * from users;
+```
+
+- MySQL: 
+ - DB_USER=lcaohoanq
+ - DB_PASSWORD=Luucaohoang1604^^
