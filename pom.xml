@@ -1,125 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.lcaohoanq</groupId>
-    <artifactId>Java-Snake-Game</artifactId>
+    <artifactId>JavaFx-Snake-Game</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>JavaFx-Snake-Game</name>
 
     <properties>
         <maven.compiler.source>18</maven.compiler.source>
         <maven.compiler.target>18</maven.compiler.target>
         <maven.compiler.release>18</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <junit.version>5.9.2</junit.version>
     </properties>
 
-    <!--using this for build: mvn clean install -PmyProfile   -->
-    <!--this for test without build: mvn exec:java -PmyProfile-->
-    <profiles>
-        <profile>
-            <id>myProfile</id>
-            <build>
-                <finalName>Snake-Game</finalName>
-                <resources>
-                    <resource>
-                        <directory>src/main/resources/assets/img</directory>
-                        <filtering>false</filtering>
-                        <includes>
-                            <include>*.png</include>
-                            <include>*.jpg</include>
-                        </includes>
-                    </resource>
-                    <resource>
-                        <directory>src/main/resources/assets/sound</directory>
-                        <filtering>false</filtering>
-                        <includes>
-                            <include>*.wav</include>
-                        </includes>
-                    </resource>
-                    <resource>
-                        <directory>src/main/resources/templates/email</directory>
-                        <filtering>false</filtering>
-                        <includes>
-                            <include>*.html</include>
-                        </includes>
-                    </resource>
-                    <resource>
-                        <directory>src/main/resources/templates/email</directory>
-                        <filtering>false</filtering>
-                        <includes>
-                            <include>*.html</include>
-                        </includes>
-                    </resource>
-                </resources>
-
-                <plugins>
-                    <!-- Add maven-jar-plugin for creating a JAR file -->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-jar-plugin</artifactId>
-                        <version>3.4.1</version>
-                        <configuration>
-                            <archive>
-                                <manifest>
-                                    <mainClass>Main</mainClass>
-                                </manifest>
-                            </archive>
-                        </configuration>
-                    </plugin>
-
-                    <!-- Add exec-maven-plugin for running your application during build -->
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>exec-maven-plugin</artifactId>
-                        <version>3.3.0</version>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>java</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <mainClass>Main</mainClass>
-                            <classpathScope>test</classpathScope>
-                        </configuration>
-                    </plugin>
-
-                    <!-- Add maven-compiler-plugin for compilation -->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                        <version>3.8.0</version>
-                        <configuration>
-                            <source>${maven.compiler.source}</source>
-                            <target>${maven.compiler.target}</target>
-                            <release>${maven.compiler.release}</release>
-                            <annotationProcessorPaths>
-                                <path>
-                                    <groupId>org.projectlombok</groupId>
-                                    <artifactId>lombok</artifactId>
-                                    <version>1.18.30</version>
-                                </path>
-                            </annotationProcessorPaths>
-                        </configuration>
-                    </plugin>
-
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-war-plugin</artifactId>
-                        <version>3.4.0</version>
-                        <configuration>
-                            <warSourceDirectory>${basedir}/src/main/webapp</warSourceDirectory>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
     <dependencies>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>18.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>18.0.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.0.33</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.swinglabs/swingx -->
         <dependency>
             <groupId>org.swinglabs</groupId>
@@ -186,7 +113,7 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.3.13</version>
-<!--            <scope>test</scope>-->
+            <!--            <scope>test</scope>-->
         </dependency>
         <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-core -->
         <dependency>
@@ -214,4 +141,146 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources/com/lcaohoanq/formhandling/</directory>
+                <filtering>false</filtering>
+                <includes>
+                    <include>**.fxml</include>
+                </includes>
+                <targetPath>${project.build.outputDirectory}/com/lcaohoanq/formhandling</targetPath>
+            </resource>
+            <resource>
+                <directory>src/main/resources/com/lcaohoanq/formhandling/assets/img</directory>
+                <filtering>false</filtering>
+                <includes>
+                    <include>**.png</include>
+                </includes>
+                <targetPath>${project.build.outputDirectory}/assets/img</targetPath>
+            </resource>
+            <resource>
+                <directory>src/main/resources/com/lcaohoanq/formhandling/assets/sound</directory>
+                <filtering>false</filtering>
+                <includes>
+                    <include>**.wav</include>
+                </includes>
+                <targetPath>${project.build.outputDirectory}/assets/sound</targetPath>
+            </resource>
+            <resource>
+                <directory>src/main/resources/com/lcaohoanq/formhandling/templates/email</directory>
+                <filtering>false</filtering>
+                <includes>
+                    <include>**.html</include>
+                </includes>
+                <targetPath>${project.build.outputDirectory}/templates/email</targetPath>
+            </resource>
+            <resource>
+                <directory>src/main/resources/com/lcaohoanq/formhandling</directory>
+                <filtering>false</filtering>
+                <includes>
+                    <include>logback.xml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources/com/lcaohoanq/formhandling/META-INF</directory>
+                <filtering>false</filtering>
+                <includes>
+                    <include>persistence.xml</include>
+                </includes>
+                <targetPath>META-INF</targetPath>
+            </resource>
+        </resources>
+        <plugins>
+            <!-- Add maven-jar-plugin for creating a JAR file -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.4.1</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.lcaohoanq.formhandling.Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <!-- Add exec-maven-plugin for running your application during build -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.3.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>Main</mainClass>
+                    <classpathScope>test</classpathScope>
+                </configuration>
+            </plugin>
+
+            <!-- Add maven-compiler-plugin for compilation -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <release>${maven.compiler.release}</release>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>1.18.30</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.4.0</version>
+                <configuration>
+                    <warSourceDirectory>${basedir}/src/main/webapp</warSourceDirectory>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>18</source>
+                    <target>18</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.8</version>
+                <executions>
+                    <execution>
+                        <!-- Default configuration for running with: mvn clean javafx:run -->
+                        <id>default-cli</id>
+                        <configuration>
+                            <mainClass>com.lcaohoanq.formhandling/com.lcaohoanq.formhandling.MainFx
+                            </mainClass>
+                            <launcher>app</launcher>
+                            <jlinkZipName>app</jlinkZipName>
+                            <jlinkImageName>app</jlinkImageName>
+                            <noManPages>true</noManPages>
+                            <stripDebug>true</stripDebug>
+                            <noHeaderFiles>true</noHeaderFiles>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
