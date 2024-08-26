@@ -2,11 +2,12 @@ package views;
 
 import static org.junit.Assert.assertEquals;
 
-import modules.user.UserEntity;
+import com.lcaohoanq.formhandling.modules.user.UserEntity;
+import com.lcaohoanq.formhandling.utils.EnvUtils;
+import com.lcaohoanq.formhandling.views.LoginView;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
-import utils.EnvUtils;
 
 public class LoginViewTest {
 

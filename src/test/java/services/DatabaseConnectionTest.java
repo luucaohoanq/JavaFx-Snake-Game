@@ -2,6 +2,7 @@ package services;
 
 import static org.junit.Assert.*;
 
+import com.lcaohoanq.formhandling.services.DatabaseService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

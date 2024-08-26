@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/com/lcaohoanq/formhandling" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/com/lcaohoanq/formhandling/META-INF" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/com/lcaohoanq/formhandling/assets" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/com/lcaohoanq/formhandling/assets/img" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/com/lcaohoanq/formhandling/assets/sound" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/com/lcaohoanq/formhandling/templates/email" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/com/lcaohoanq/fxsnakegame" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/com/lcaohoanq/fxsnakegame/META-INF" charset="UTF-8" />
+  </component>
+</project>
