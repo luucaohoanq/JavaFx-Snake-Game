@@ -1,62 +1,72 @@
 package com.lcaohoanq.formhandling.controllers;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.lcaohoanq.formhandling.enums.Hover;
-import com.lcaohoanq.formhandling.styles.UIHovers;
 import com.lcaohoanq.formhandling.utils.ApiUtils;
-import com.lcaohoanq.formhandling.views.LoginView;
 import com.lcaohoanq.formhandling.views.UIPrompts;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.io.IOException;
-import java.net.http.HttpClient;
+import com.lcaohoanq.formhandling.views.base.BaseResources;
 import java.net.http.HttpResponse;
 import java.util.Map;
-import javax.swing.JButton;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.event.ActionEvent;
 import javax.swing.JOptionPane;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
 
 @Slf4j
-public final class LoginController implements ActionListener, MouseListener {
+@AllArgsConstructor
+@NoArgsConstructor
+public class LoginController extends BaseResources {
 
-    public static String email = "";
-    private final LoginView loginView;
-    public String password = "";
-    private final UIHovers<LoginView> uiHovers;
-    private final HttpClient httpClient;
-    private final ObjectMapper objectMapper;
+    @FXML
+    private TextField usernameTextField;
+    @FXML
+    private PasswordField enterPasswordField;
+    @FXML
+    private Button loginButton;
+    private String email = "";
+    private String password = "";
 
-    public LoginController(LoginView loginView) {
-        super();
-        this.loginView = loginView;
-        this.uiHovers = new UIHovers<>(loginView);
-        httpClient = HttpClient.newHttpClient();
-        objectMapper = new ObjectMapper().registerModule(new JavaTimeModule()).enable(
-            SerializationFeature.INDENT_OUTPUT);
+    @FXML
+    public void initialize() {
+        usernameTextField.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                System.out.println("Enter key pressed");
+                loginButtonAction(null);  // Trigger login action when Enter key is pressed
+            }
+        });
+        enterPasswordField.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                System.out.println("Enter key pressed");
+                loginButtonAction(null);  // Trigger login action when Enter key is pressed
+            }
+        });
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        email = loginView.getDataWhenLogin().getEmail();
-        password = loginView.getDataWhenLogin().getPassword();
 
-        if (loginView.isAdmin()) {
-            loginView.handleSuccess();
-            log.info("Admin login successful");
-            return;
-        }
-        //prevent empty field when click submit button, but not when click on the menu
-        if (loginView.isEmpty() && e.getSource() instanceof JButton) {
+    public void loginButtonAction(ActionEvent event) {
+        if ((!usernameTextField.getText().isBlank()) && (!enterPasswordField.getText().isBlank())) {
+//            loginMessageLabel.setText("You tried to login");
+            validateLogin();
+        } else {
             UIPrompts.IS_EMPTY_FIELD();
-            log.error("Empty field when login, please try again");
+        }
+    }
+
+    public void validateLogin() {
+        email = usernameTextField.getText();
+        password = enterPasswordField.getText();
+        if (email.equals("admin") && password.equals("admin")) {
+            UIPrompts.IS_LOGIN_SUCCESS();
         } else {
             login(email, password);
         }
-
     }
 
     private void login(String email_phone, String password) {
@@ -77,7 +87,7 @@ public final class LoginController implements ActionListener, MouseListener {
                 // Handle the response
                 switch (response.statusCode()) {
                     case 200:
-                        loginView.handleSuccess();
+                        UIPrompts.IS_LOGIN_SUCCESS();
                         break;
                     case 400:
                         JOptionPane.showMessageDialog(null,
@@ -94,95 +104,27 @@ public final class LoginController implements ActionListener, MouseListener {
         }).start();
     }
 
-    @Override
-    public void mouseClicked(MouseEvent e) {
-
+    @FXML
+    // Custom method for login via Google action
+    private void loginViaGoogleAction() {
+        UIPrompts.IS_NOT_SUPPORT();
     }
 
-    @Override
-    public void mousePressed(MouseEvent e) {
-
+    @FXML
+    private void loginViaFacebookAction() {
+        UIPrompts.IS_NOT_SUPPORT();
     }
 
-    @Override
-    public void mouseReleased(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-        if (e.getSource() == loginView.getJTextField_Right_Middle_Email()) {
-            if (!loginView.getStatusToggle()) {
-                uiHovers.setHoverEmail(Hover.ENABLE.isStatus(), "light");
-            } else {
-                uiHovers.setHoverEmail(Hover.ENABLE.isStatus(), "dark");
+    public void signupHereAction(ActionEvent actionEvent) {
+        try {
+            // Specify the URL of the website
+            URI uri = new URI("http://localhost:3000/users/register");
+            // Open the website in the default browser
+            if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
+                Desktop.getDesktop().browse(uri);
             }
-        }
-        if (e.getSource() == loginView.getJPasswordField_Right_Middle_Password()) {
-            if (!loginView.getStatusToggle()) {
-                uiHovers.setHoverEmail(Hover.ENABLE.isStatus(), "light");
-
-            } else {
-                uiHovers.setHoverEmail(Hover.ENABLE.isStatus(), "dark");
-            }
-        }
-        if (e.getSource() == loginView.getJButton_Right_Bottom_Submit()) {
-            if (!loginView.getStatusToggle()) {
-                uiHovers.setHoverEmail(Hover.ENABLE.isStatus(), "light");
-            } else {
-                uiHovers.setHoverEmail(Hover.ENABLE.isStatus(), "dark");
-            }
-        }
-        if (e.getSource() == loginView.getJButton_Right_Bottom_Others()) {
-            uiHovers.setHoverOther(Hover.ENABLE.isStatus());
-        }
-        if (e.getSource() == loginView.getJButton_Right_Bottom_Forgot_Password()) {
-            uiHovers.setHoverForgotPassword(Hover.ENABLE.isStatus());
-        }
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-        if (e.getSource() == loginView.getJTextField_Right_Middle_Email()) {
-            if (!loginView.getStatusToggle()) {
-                uiHovers.setHoverEmail(Hover.DISABLE.isStatus(), "light");
-            } else {
-                uiHovers.setHoverEmail(Hover.DISABLE.isStatus(), "dark");
-            }
-        }
-        if (e.getSource() == loginView.getJTextField_Right_Middle_FirstName()) {
-            if (!loginView.getStatusToggle()) {
-                uiHovers.setHoverFirstName(Hover.DISABLE.isStatus(), "light");
-            } else {
-                uiHovers.setHoverFirstName(Hover.DISABLE.isStatus(), "dark");
-            }
-        }
-        if (e.getSource() == loginView.getJTextField_Right_Middle_LastName()) {
-            if (!loginView.getStatusToggle()) {
-                uiHovers.setHoverLastName(Hover.DISABLE.isStatus(), "light");
-            } else {
-                uiHovers.setHoverLastName(Hover.DISABLE.isStatus(), "dark");
-            }
-        }
-        if (e.getSource() == loginView.getJPasswordField_Right_Middle_Password()) {
-            if (!loginView.getStatusToggle()) {
-                uiHovers.setHoverPassword(Hover.DISABLE.isStatus(), "light");
-            } else {
-                uiHovers.setHoverPassword(Hover.DISABLE.isStatus(), "dark");
-            }
-        }
-        if (e.getSource() == loginView.getJButton_Right_Bottom_Submit()) {
-            if (!loginView.getStatusToggle()) {
-                uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "light");
-            } else {
-                uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "dark");
-            }
-        }
-        if (e.getSource() == loginView.getJButton_Right_Bottom_Others()) {
-            uiHovers.setHoverOther(Hover.DISABLE.isStatus());
-        }
-        if (e.getSource() == loginView.getJButton_Right_Bottom_Forgot_Password()) {
-            uiHovers.setHoverForgotPassword(Hover.DISABLE.isStatus());
+        } catch (Exception ex) {
+            System.out.println("Error: " + ex.getMessage());
         }
     }
 }
