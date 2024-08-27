@@ -19,5 +19,10 @@ module com.lcaohoanq.formhandling {
 
     opens com.lcaohoanq.formhandling to javafx.fxml;
     opens com.lcaohoanq.formhandling.modules.user to org.hibernate.orm.core;
+    opens com.lcaohoanq.formhandling.views.base to javafx.fxml;
     exports com.lcaohoanq.formhandling;
+    exports com.lcaohoanq.formhandling.views;
+    opens com.lcaohoanq.formhandling.views to javafx.fxml;
+    exports com.lcaohoanq.formhandling.controllers;
+    opens com.lcaohoanq.formhandling.controllers to javafx.fxml;
 }
