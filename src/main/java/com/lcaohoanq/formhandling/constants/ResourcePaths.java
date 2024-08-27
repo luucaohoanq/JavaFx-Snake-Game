@@ -16,5 +16,4 @@ public class ResourcePaths {
     public static final String URL_INTRO = "/assets/sound/intro.wav";
     public static final String URL_BIG_APPLE_DIS = "/assets/sound/bigAppleDis.wav";
     public static final String URL_BIG_APPLE_APP = "/assets/sound/bigAppleApp.wav";
-
 }
