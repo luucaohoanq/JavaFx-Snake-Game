@@ -13,6 +13,7 @@ import javafx.scene.input.KeyCode;
 import javafx.event.ActionEvent;
 import javax.swing.JOptionPane;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import java.awt.Desktop;
@@ -22,6 +23,7 @@ import java.net.URI;
 @Slf4j
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
 public class LoginController extends BaseResources {
 
     @FXML
