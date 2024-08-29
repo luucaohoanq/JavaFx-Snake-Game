@@ -1,16 +1,23 @@
 package com.lcaohoanq.formhandling.controllers;
 
+import com.lcaohoanq.formhandling.constants.APIConstants;
 import com.lcaohoanq.formhandling.utils.ApiUtils;
+import com.lcaohoanq.formhandling.utils.EnvUtils;
+import com.lcaohoanq.formhandling.views.MenuView;
 import com.lcaohoanq.formhandling.views.UIPrompts;
 import com.lcaohoanq.formhandling.views.base.BaseResources;
+import java.awt.EventQueue;
+import java.awt.event.ActionListener;
 import java.net.http.HttpResponse;
 import java.util.Map;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.event.ActionEvent;
+import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -76,7 +83,7 @@ public class LoginController extends BaseResources {
         new Thread(() -> {
             try {
                 // Replace with your API URL
-                String apiUrl = "http://localhost:8081/users/login";
+                String apiUrl = APIConstants.BASE_URL + "/users/login";
                 // Create the payload as a map and convert it to JSON
                 Map<String, String> payload = Map.of(
                     "email_phone", email_phone, // Replace with actual value
@@ -90,6 +97,13 @@ public class LoginController extends BaseResources {
                 switch (response.statusCode()) {
                     case 200:
                         UIPrompts.IS_LOGIN_SUCCESS();
+
+                        Platform.runLater(() -> {
+                            new MenuView().setVisible(true);
+                            Stage stage = (Stage) loginButton.getScene().getWindow();
+                            stage.close();
+                        });
+
                         break;
                     case 400:
                         JOptionPane.showMessageDialog(null,
@@ -107,14 +121,24 @@ public class LoginController extends BaseResources {
     }
 
     @FXML
-    // Custom method for login via Google action
     private void loginViaGoogleAction() {
-        UIPrompts.IS_NOT_SUPPORT();
+        Platform.runLater(() -> {
+            String googleAuthUrl = EnvUtils.get("GOOGLE_AUTH_URL");
+            try {
+                URI uri = new URI(googleAuthUrl);
+                if (Desktop.isDesktopSupported() && Desktop.getDesktop()
+                    .isSupported(Desktop.Action.BROWSE)) {
+                    Desktop.getDesktop().browse(uri);
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
     }
 
     @FXML
     private void loginViaFacebookAction() {
-        UIPrompts.IS_NOT_SUPPORT();
+        Platform.runLater(() -> UIPrompts.IS_NOT_SUPPORT());
     }
 
     public void signupHereAction(ActionEvent actionEvent) {
@@ -122,7 +146,8 @@ public class LoginController extends BaseResources {
             // Specify the URL of the website
             URI uri = new URI("http://localhost:3000/users/register");
             // Open the website in the default browser
-            if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
+            if (Desktop.isDesktopSupported() && Desktop.getDesktop()
+                .isSupported(Desktop.Action.BROWSE)) {
                 Desktop.getDesktop().browse(uri);
             }
         } catch (Exception ex) {

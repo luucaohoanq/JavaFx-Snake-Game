@@ -13,6 +13,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+@Deprecated
 public class UserDAO {
 
     private static UserDAO instance;

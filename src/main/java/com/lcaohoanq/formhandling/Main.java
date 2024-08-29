@@ -1,6 +1,9 @@
 package com.lcaohoanq.formhandling;
 
 import com.lcaohoanq.formhandling.utils.LogsUtils;
+import com.lcaohoanq.formhandling.views.OTPVerificationView;
+import com.lcaohoanq.formhandling.views.SwingLoginView;
+import java.awt.EventQueue;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
