@@ -41,12 +41,6 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
-        <dependency>
-            <groupId>com.mysql</groupId>
-            <artifactId>mysql-connector-j</artifactId>
-            <version>8.0.33</version>
-        </dependency>
         <!-- https://mvnrepository.com/artifact/org.swinglabs/swingx -->
         <dependency>
             <groupId>org.swinglabs</groupId>
@@ -144,15 +138,15 @@
     <build>
         <resources>
             <resource>
-                <directory>src/main/resources/com/lcaohoanq/formhandling/</directory>
+                <directory>src/main/resources/com/lcaohoanq/fxsnakegame/</directory>
                 <filtering>false</filtering>
                 <includes>
                     <include>**.fxml</include>
                 </includes>
-                <targetPath>${project.build.outputDirectory}/com/lcaohoanq/formhandling</targetPath>
+                <targetPath>${project.build.outputDirectory}/com/lcaohoanq/fxsnakegame</targetPath>
             </resource>
             <resource>
-                <directory>src/main/resources/com/lcaohoanq/formhandling/assets/img</directory>
+                <directory>src/main/resources/com/lcaohoanq/fxsnakegame/assets/img</directory>
                 <filtering>false</filtering>
                 <includes>
                     <include>**.png</include>
@@ -160,7 +154,7 @@
                 <targetPath>${project.build.outputDirectory}/assets/img</targetPath>
             </resource>
             <resource>
-                <directory>src/main/resources/com/lcaohoanq/formhandling/assets/sound</directory>
+                <directory>src/main/resources/com/lcaohoanq/fxsnakegame/assets/sound</directory>
                 <filtering>false</filtering>
                 <includes>
                     <include>**.wav</include>
@@ -168,7 +162,7 @@
                 <targetPath>${project.build.outputDirectory}/assets/sound</targetPath>
             </resource>
             <resource>
-                <directory>src/main/resources/com/lcaohoanq/formhandling/templates/email</directory>
+                <directory>src/main/resources/com/lcaohoanq/fxsnakegame/templates/email</directory>
                 <filtering>false</filtering>
                 <includes>
                     <include>**.html</include>
@@ -176,19 +170,11 @@
                 <targetPath>${project.build.outputDirectory}/templates/email</targetPath>
             </resource>
             <resource>
-                <directory>src/main/resources/com/lcaohoanq/formhandling</directory>
+                <directory>src/main/resources/com/lcaohoanq/fxsnakegame</directory>
                 <filtering>false</filtering>
                 <includes>
                     <include>logback.xml</include>
                 </includes>
-            </resource>
-            <resource>
-                <directory>src/main/resources/com/lcaohoanq/formhandling/META-INF</directory>
-                <filtering>false</filtering>
-                <includes>
-                    <include>persistence.xml</include>
-                </includes>
-                <targetPath>META-INF</targetPath>
             </resource>
         </resources>
         <plugins>
@@ -200,7 +186,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.lcaohoanq.formhandling.Main</mainClass>
+                            <mainClass>com.lcaohoanq.fxsnakegame.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -252,15 +238,6 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
-                <configuration>
-                    <source>18</source>
-                    <target>18</target>
-                </configuration>
-            </plugin>
-            <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
@@ -269,7 +246,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.lcaohoanq.formhandling/com.lcaohoanq.formhandling.Main
+                            <mainClass>com.lcaohoanq.fxsnakegame/com.lcaohoanq.fxsnakegame.Main
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

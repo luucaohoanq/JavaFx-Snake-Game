@@ -3,13 +3,11 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/com/lcaohoanq/formhandling" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/com/lcaohoanq/formhandling/META-INF" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/com/lcaohoanq/formhandling/assets" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/com/lcaohoanq/formhandling/assets/img" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/com/lcaohoanq/formhandling/assets/sound" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/com/lcaohoanq/formhandling/templates/email" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources/com/lcaohoanq/fxsnakegame" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources/com/lcaohoanq/fxsnakegame/META-INF" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/com/lcaohoanq/fxsnakegame/assets" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/com/lcaohoanq/fxsnakegame/assets/img" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/com/lcaohoanq/fxsnakegame/assets/sound" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/com/lcaohoanq/fxsnakegame/templates/email" charset="UTF-8" />
   </component>
 </project>

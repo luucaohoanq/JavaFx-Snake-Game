@@ -1,4 +1,4 @@
-module com.lcaohoanq.formhandling {
+module com.lcaohoanq.fxsnakegame {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.graphics;
@@ -17,12 +17,11 @@ module com.lcaohoanq.formhandling {
     requires javax.mail.api;
     requires swingx;
 
-    opens com.lcaohoanq.formhandling to javafx.fxml;
-    opens com.lcaohoanq.formhandling.modules.user to org.hibernate.orm.core;
-    opens com.lcaohoanq.formhandling.views.base to javafx.fxml;
-    exports com.lcaohoanq.formhandling;
-    exports com.lcaohoanq.formhandling.views;
-    opens com.lcaohoanq.formhandling.views to javafx.fxml;
-    exports com.lcaohoanq.formhandling.controllers;
-    opens com.lcaohoanq.formhandling.controllers to javafx.fxml;
+    opens com.lcaohoanq.fxsnakegame to javafx.fxml;
+    opens com.lcaohoanq.fxsnakegame.views.base to javafx.fxml;
+    exports com.lcaohoanq.fxsnakegame;
+    exports com.lcaohoanq.fxsnakegame.views;
+    opens com.lcaohoanq.fxsnakegame.views to javafx.fxml;
+    exports com.lcaohoanq.fxsnakegame.controllers;
+    opens com.lcaohoanq.fxsnakegame.controllers to javafx.fxml;
 }

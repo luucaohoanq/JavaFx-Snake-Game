@@ -4,7 +4,7 @@
 2024-08-27 00:52:23 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
 2024-08-27 00:52:23 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
 2024-08-27 00:52:23 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3307/snake_game_app]
-2024-08-27 00:52:23 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=lcaohoanq}
+2024-08-27 00:52:23 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, userDTO=lcaohoanq}
 2024-08-27 00:52:23 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
 2024-08-27 00:52:23 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
 2024-08-27 00:52:24 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
@@ -15,7 +15,7 @@
 2024-08-27 00:52:56 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
 2024-08-27 00:52:56 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
 2024-08-27 00:52:56 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3307/snake_game_app]
-2024-08-27 00:52:56 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=lcaohoanq}
+2024-08-27 00:52:56 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, userDTO=lcaohoanq}
 2024-08-27 00:52:56 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
 2024-08-27 00:52:56 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
 2024-08-27 00:52:56 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
@@ -26,7 +26,7 @@
 2024-08-27 00:54:30 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
 2024-08-27 00:54:30 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
 2024-08-27 00:54:30 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3307/snake_game_app]
-2024-08-27 00:54:30 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=lcaohoanq}
+2024-08-27 00:54:30 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, userDTO=lcaohoanq}
 2024-08-27 00:54:30 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
 2024-08-27 00:54:30 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
 2024-08-27 00:54:31 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
@@ -38,7 +38,7 @@
 2024-08-27 00:58:17 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
 2024-08-27 00:58:17 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
 2024-08-27 00:58:17 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3307/snake_game_app]
-2024-08-27 00:58:17 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=lcaohoanq}
+2024-08-27 00:58:17 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, userDTO=lcaohoanq}
 2024-08-27 00:58:17 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
 2024-08-27 00:58:17 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
 2024-08-27 00:58:17 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
@@ -50,7 +50,7 @@
 2024-08-27 01:02:48 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
 2024-08-27 01:02:48 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
 2024-08-27 01:02:48 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3307/snake_game_app]
-2024-08-27 01:02:48 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=lcaohoanq}
+2024-08-27 01:02:48 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, userDTO=lcaohoanq}
 2024-08-27 01:02:48 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
 2024-08-27 01:02:48 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
 2024-08-27 01:02:48 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
@@ -62,7 +62,7 @@
 2024-08-27 08:49:52 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
 2024-08-27 08:49:52 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
 2024-08-27 08:49:52 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3307/snake_game_app]
-2024-08-27 08:49:52 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=lcaohoanq}
+2024-08-27 08:49:52 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, userDTO=lcaohoanq}
 2024-08-27 08:49:52 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
 2024-08-27 08:49:52 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
 2024-08-27 08:49:52 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
@@ -74,7 +74,7 @@
 2024-08-27 09:00:04 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
 2024-08-27 09:00:04 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
 2024-08-27 09:00:04 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3307/snake_game_app]
-2024-08-27 09:00:04 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=lcaohoanq}
+2024-08-27 09:00:04 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, userDTO=lcaohoanq}
 2024-08-27 09:00:04 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
 2024-08-27 09:00:04 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
 2024-08-27 09:00:04 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
@@ -86,7 +86,7 @@
 2024-08-27 09:00:45 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
 2024-08-27 09:00:45 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
 2024-08-27 09:00:45 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3307/snake_game_app]
-2024-08-27 09:00:45 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=lcaohoanq}
+2024-08-27 09:00:45 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, userDTO=lcaohoanq}
 2024-08-27 09:00:45 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
 2024-08-27 09:00:45 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
 2024-08-27 09:00:45 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
@@ -98,7 +98,7 @@
 2024-08-29 17:09:39 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
 2024-08-29 17:09:39 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
 2024-08-29 17:09:39 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3307/snake_game_app]
-2024-08-29 17:09:39 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=lcaohoanq}
+2024-08-29 17:09:39 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, userDTO=lcaohoanq}
 2024-08-29 17:09:39 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
 2024-08-29 17:09:39 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
 2024-08-29 17:09:39 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
@@ -111,7 +111,7 @@
 2024-08-29 17:17:33 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
 2024-08-29 17:17:33 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
 2024-08-29 17:17:33 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3307/snake_game_app]
-2024-08-29 17:17:33 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=lcaohoanq}
+2024-08-29 17:17:33 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, userDTO=lcaohoanq}
 2024-08-29 17:17:33 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
 2024-08-29 17:17:33 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
 2024-08-29 17:17:33 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
@@ -123,9 +123,94 @@
 2024-08-29 17:19:43 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
 2024-08-29 17:19:43 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
 2024-08-29 17:19:43 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3307/snake_game_app]
-2024-08-29 17:19:43 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=lcaohoanq}
+2024-08-29 17:19:43 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, userDTO=lcaohoanq}
 2024-08-29 17:19:43 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
 2024-08-29 17:19:43 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
 2024-08-29 17:19:43 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
 2024-08-29 17:19:44 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 2024-08-29 17:19:44 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1d91bfa] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-08-30 11:19:09 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: JFXSGPU]
+2024-08-30 11:19:09 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version [WORKING]
+2024-08-30 11:19:09 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-08-30 11:19:09 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-08-30 11:19:09 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+2024-08-30 11:19:09 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3307/snake_game_app]
+2024-08-30 11:19:09 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, userDTO=lcaohoanq}
+2024-08-30 11:19:09 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-08-30 11:19:09 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2024-08-30 11:19:09 WARN  o.h.e.j.e.i.JdbcEnvironmentInitiator - HHH000342: Could not obtain connection to query metadata
+java.lang.IllegalStateException: Cannot get a connection as the driver manager is not properly initialized
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.getConnection(DriverManagerConnectionProviderImpl.java:260)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:437)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:290)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:123)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:77)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.service.ServiceRegistry.requireService(ServiceRegistry.java:68)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:52)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:136)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:247)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.convertSqlException(BasicConnectionCreator.java:133)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:43)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:61)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.addConnections(DriverManagerConnectionProviderImpl.java:500)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init>(DriverManagerConnectionProviderImpl.java:373)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections$Builder.build(DriverManagerConnectionProviderImpl.java:551)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildPool(DriverManagerConnectionProviderImpl.java:102)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure(DriverManagerConnectionProviderImpl.java:82)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:136)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:247)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.service.ServiceRegistry.requireService(ServiceRegistry.java:68)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.buildJdbcConnectionAccess(JdbcEnvironmentInitiator.java:404)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:276)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:123)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:77)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:221)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:189)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502)
+	at org.hibernate.orm.core@6.5.2.Final/org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:55)
+	at jakarta.persistence@3.1.0/jakarta.persistence.Persistence.createEntityManagerFactory(Persistence.java:80)
+	at jakarta.persistence@3.1.0/jakarta.persistence.Persistence.createEntityManagerFactory(Persistence.java:55)
+	at com.lcaohoanq.fxsnakegame/com.lcaohoanq.fxsnakegame.modules.userDTO.UserDAO.<init>(UserDAO.java:20)
+	at com.lcaohoanq.fxsnakegame/com.lcaohoanq.fxsnakegame.modules.userDTO.UserDAO.getInstance(UserDAO.java:27)
+	at com.lcaohoanq.fxsnakegame/com.lcaohoanq.fxsnakegame.controllers.ScoreController.<init>(ScoreController.java:20)
+	at com.lcaohoanq.fxsnakegame/com.lcaohoanq.fxsnakegame.views.ScoreView.<init>(ScoreView.java:27)
+	at com.lcaohoanq.fxsnakegame/com.lcaohoanq.fxsnakegame.views.base.MyFrame.doAction(MyFrame.java:184)
+	at com.lcaohoanq.fxsnakegame/com.lcaohoanq.fxsnakegame.views.SwingLoginView.doAction(SwingLoginView.java:143)
+	at com.lcaohoanq.fxsnakegame/com.lcaohoanq.fxsnakegame.views.base.MyFrame.initUI(MyFrame.java:39)
+	at com.lcaohoanq.fxsnakegame/com.lcaohoanq.fxsnakegame.views.base.MyFrame.<init>(MyFrame.java:34)
+	at com.lcaohoanq.fxsnakegame/com.lcaohoanq.fxsnakegame.views.SwingLoginView.<init>(SwingLoginView.java:33)
+	at com.lcaohoanq.fxsnakegame/com.lcaohoanq.fxsnakegame.views.MenuView$LogOut.lambda$actionPerformed$0(MenuView.java:253)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2024-08-30 11:19:09 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-30 11:19:09 WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 08S01
+2024-08-30 11:19:09 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2024-08-30 15:10:15 INFO  c.l.fxsnakegame.views.base.Board - Update score successfully
+2024-08-30 15:14:20 INFO  c.l.fxsnakegame.views.base.Board - Update score successfully
