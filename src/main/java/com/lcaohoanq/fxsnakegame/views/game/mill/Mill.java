@@ -101,6 +101,21 @@ public class Mill extends BoardView {
     }
 
     @Override
+    public void checkSelfCollision() {
+
+    }
+
+    @Override
+    public void checkBoundaryCollision() {
+
+    }
+
+    @Override
+    public void checkWallCollision() {
+
+    }
+
+    @Override
     public void locateApple() {
         if (apple_count % 5 == 0 && apple_count != 0) {
             locateBigApple();

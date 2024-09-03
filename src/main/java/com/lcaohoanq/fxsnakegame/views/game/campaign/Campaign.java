@@ -9,6 +9,21 @@ public class Campaign extends BoardView {
     }
 
     @Override
+    public void checkSelfCollision() {
+
+    }
+
+    @Override
+    public void checkBoundaryCollision() {
+
+    }
+
+    @Override
+    public void checkWallCollision() {
+
+    }
+
+    @Override
     public void locateApple() {
 
     }
