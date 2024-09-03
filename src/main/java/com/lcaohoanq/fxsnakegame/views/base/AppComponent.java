@@ -37,16 +37,16 @@ public abstract class AppComponent extends JFrame {
     protected final JMenuItem jMenuItem_Score = new JMenuItem("Show Score");
     protected final JMenuItem jMenuItem_Go = new JMenuItem("Go!!!");
     protected JTextField jTextField_Right_Middle_Email = new JTextField(20); // 20 is the number of columns
-    protected JTextField  jTextField_Right_Middle_FirstName = new JTextField(20);; // 20 is the number of columns
-    protected JTextField jTextField_Right_Middle_LastName = new JTextField(20);; // 20 is the number of columns
-    protected JPasswordField jPasswordField_Right_Middle_Password = new JPasswordField(20);;
-    protected JPasswordField jPasswordField_Right_Middle_Confirm_Password = new JPasswordField(20);;
-    protected JButton jButton_Right_Bottom_Submit = new JButton(UILabels.SUBMIT);;
-    protected JButton jButton_Right_Bottom_Forgot_Password = new JButton(UILabels.FORGOT_PASSWORD);;
+    protected JTextField  jTextField_Right_Middle_FirstName = new JTextField(20); // 20 is the number of columns
+    protected JTextField jTextField_Right_Middle_LastName = new JTextField(20); // 20 is the number of columns
+    protected JPasswordField jPasswordField_Right_Middle_Password = new JPasswordField(20);
+    protected JPasswordField jPasswordField_Right_Middle_Confirm_Password = new JPasswordField(20);
+    protected JButton jButton_Right_Bottom_Submit = new JButton(UILabels.SUBMIT);
+    protected JButton jButton_Right_Bottom_Forgot_Password = new JButton(UILabels.FORGOT_PASSWORD);
     protected JButton jButton_Right_Bottom_Others;
     protected JPanel jPanel_Container = new JPanel();
     protected JPanel jPanel_Right = new JPanel(new BorderLayout());
-    protected JPanel jPanel_Right_Top_Title = new JPanel();;
+    protected JPanel jPanel_Right_Top_Title = new JPanel();
     protected JLabel jLabel_Right_Top_Title;
     protected JPanel jPanel_Right_Middle_Email = new JPanel();
     protected JPanel jPanel_Right_Middle_FirstName = new JPanel();
@@ -54,21 +54,21 @@ public abstract class AppComponent extends JFrame {
     protected JLabel jLabel_Right_Middle_Email;
     protected JLabel jLabel_Right_Middle_FirstName;
     protected JLabel jLabel_Right_Middle_LastName;
-    protected JPanel jPanel_Right_Middle_Password = new JPanel();;
+    protected JPanel jPanel_Right_Middle_Password = new JPanel();
     protected JLabel jLabel_Right_Middle_Password;
     protected JLabel jLabel_Right_Middle_Confirm_Password;
     protected JPanel jPanel_Right_Middle_Confirm_Password = new JPanel();
     protected JPanel jPanel_Right_Middle_Data;
-    protected JButton jButton_Right_Play = new JButton(UILabels.PLAY);;
-    protected JPanel jPanel_Right_Bottom_Option = new JPanel();;
+    protected JButton jButton_Right_Play = new JButton(UILabels.PLAY);
+    protected JPanel jPanel_Right_Bottom_Option = new JPanel();
     protected JLabel jLabel_Right_Bottom_Option;
-    protected JPanel jPanel_Left_Icon = new JPanel(new BorderLayout());;
-    protected AudioUtils audioUtils = new AudioUtils();
-    protected JPanel jPanel_Left = new JPanel(new BorderLayout());;
+    protected JPanel jPanel_Left_Icon = new JPanel(new BorderLayout());
+    protected AudioUtils audioUtils = AudioUtils.getInstance();
+    protected JPanel jPanel_Left = new JPanel(new BorderLayout());
     protected JLabel jLabel_Left_Icon = new JLabel(
         new ImageIcon(new ImageIcon(
             Toolkit.getDefaultToolkit().getImage(MyFrame.class.getResource(ResourcePaths.URL_SNAKE_LOGO))).getImage().getScaledInstance(250, 250, Image.SCALE_SMOOTH)));;
-    protected JMenuBar jMenuBar = new JMenuBar();;
+    protected JMenuBar jMenuBar = new JMenuBar();
     protected Cursor cursor = new Cursor(Cursor.HAND_CURSOR);
 
     // MenuView

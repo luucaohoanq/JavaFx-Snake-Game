@@ -15,7 +15,7 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("login.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 830, 650);
-        stage.setTitle("Hello!");
+        stage.setTitle("Snake Game Login");
         stage.initStyle(StageStyle.DECORATED); // Hide the window's title bar (close, minimize, maximize buttons)
         stage.setScene(scene);
         stage.show();
@@ -25,7 +25,7 @@ public class Main extends Application {
 
         LogsUtils.ensureLogsFolderExists();
 
-        new AudioUtils().playAudio(Main.class.getResourceAsStream(
+        AudioUtils.getInstance().playAudio(Main.class.getResourceAsStream(
             ResourcePaths.URL_INTRO));
 
         launch();

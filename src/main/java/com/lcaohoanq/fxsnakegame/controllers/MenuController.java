@@ -31,7 +31,7 @@ public class MenuController implements MouseListener, ActionListener {
 
     public MenuController(MenuView menuView) {
         MenuController.menuView = menuView;
-        this.audioUtils = new AudioUtils();
+        this.audioUtils = AudioUtils.getInstance();
         this.jButtonList = Arrays.asList(
             menuView.jButton_Mode_Classic,
             menuView.jButton_Mode_Modern,
@@ -137,7 +137,7 @@ public class MenuController implements MouseListener, ActionListener {
 
         public MenuModernController(MenuView.MenuModern menuModern) {
             this.menuModern = menuModern;
-            this.audioUtils = new AudioUtils();
+            this.audioUtils = AudioUtils.getInstance();
             this.uiHovers = new UIHovers<>(menuModern);
         }
 

@@ -33,7 +33,7 @@ public class MenuView extends AppComponent implements ToggleHandler {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         initUI();
         this.uiHovers = new UIHovers<>(this);
-        this.audioUtils = new AudioUtils();
+        this.audioUtils = AudioUtils.getInstance();
     }
 
     @Override

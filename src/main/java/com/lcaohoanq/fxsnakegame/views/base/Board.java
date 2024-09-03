@@ -3,7 +3,15 @@ package com.lcaohoanq.fxsnakegame.views.base;
 import com.lcaohoanq.fxsnakegame.constants.APIConstants;
 import com.lcaohoanq.fxsnakegame.constants.ResourcePaths;
 import com.lcaohoanq.fxsnakegame.controllers.LoginController;
+import com.lcaohoanq.fxsnakegame.styles.UIBorders;
+import com.lcaohoanq.fxsnakegame.styles.UIColors;
+import com.lcaohoanq.fxsnakegame.styles.UIFonts;
+import com.lcaohoanq.fxsnakegame.styles.UILabels;
+import com.lcaohoanq.fxsnakegame.styles.UISizes;
 import com.lcaohoanq.fxsnakegame.utils.ApiUtils;
+import com.lcaohoanq.fxsnakegame.utils.AudioUtils;
+import com.lcaohoanq.fxsnakegame.views.MenuView;
+import com.lcaohoanq.fxsnakegame.views.utils.UIPrompts;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -16,6 +24,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.InputStream;
 import java.net.http.HttpResponse;
+import java.util.Objects;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -24,15 +33,6 @@ import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.SwingUtilities;
 import javax.swing.Timer;
-import com.lcaohoanq.fxsnakegame.utils.AudioUtils;
-//import com.lcaohoanq.fxsnakegame.daos.UserDAO;
-import com.lcaohoanq.fxsnakegame.styles.UIBorders;
-import com.lcaohoanq.fxsnakegame.styles.UIColors;
-import com.lcaohoanq.fxsnakegame.styles.UIFonts;
-import com.lcaohoanq.fxsnakegame.styles.UILabels;
-import com.lcaohoanq.fxsnakegame.styles.UISizes;
-import com.lcaohoanq.fxsnakegame.views.MenuView;
-import com.lcaohoanq.fxsnakegame.views.utils.UIPrompts;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -56,7 +56,7 @@ public abstract class Board extends JPanel implements ActionListener {
     protected int apple_y;                       // Y-coordinate of a regular apple
     // Game timers and images
     protected Timer timer;                       // Timer for regular game events
-    protected AudioUtils audioUtils = new AudioUtils();
+    protected AudioUtils audioUtils = AudioUtils.getInstance();
     // Snake movement directions
     protected boolean leftDirection = false;     // Flag for moving left
     protected boolean rightDirection = true;     // Flag for moving right
@@ -175,10 +175,8 @@ public abstract class Board extends JPanel implements ActionListener {
         playAgainButton.setForeground(UIColors.PRIMARY_COLOR_L);
         playAgainButton.setPreferredSize(UISizes.SIZE_BUTTON_GAME_OVER);
         playAgainButton.addActionListener(e -> {
-            SwingUtilities.invokeLater(() -> {
-                // Reset game parameters and restart the game
-                resetGame();
-            });
+            // Reset game parameters and restart the game
+            SwingUtilities.invokeLater(this::resetGame);
         });
     }
 
@@ -239,13 +237,22 @@ public abstract class Board extends JPanel implements ActionListener {
 
     protected void loadImages() {
 
-        ball = new ImageIcon(getClass().getResource(ResourcePaths.URL_DOT)).getImage();
+        try{
+            ball = new ImageIcon(
+                Objects.requireNonNull(getClass().getResource(ResourcePaths.URL_DOT))).getImage();
 
-        apple = new ImageIcon(getClass().getResource(ResourcePaths.URL_APPLE)).getImage();
+            apple = new ImageIcon(
+                Objects.requireNonNull(getClass().getResource(ResourcePaths.URL_APPLE))).getImage();
 
-        head = new ImageIcon(getClass().getResource(ResourcePaths.URL_HEAD)).getImage();
+            head = new ImageIcon(
+                Objects.requireNonNull(getClass().getResource(ResourcePaths.URL_HEAD))).getImage();
 
-        bigApple = new ImageIcon(getClass().getResource(ResourcePaths.URL_BIG_APPLE)).getImage();
+            bigApple = new ImageIcon(
+                Objects.requireNonNull(getClass().getResource(ResourcePaths.URL_BIG_APPLE))).getImage();
+        }catch (Exception e){
+            System.out.println("Resources at Board not found");
+        }
+
     }
 
     private void initGame() {
