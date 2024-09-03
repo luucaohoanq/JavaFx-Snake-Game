@@ -1,6 +1,6 @@
-package com.lcaohoanq.fxsnakegame.views.game;
+package com.lcaohoanq.fxsnakegame.views.game.campaign;
 
-import com.lcaohoanq.fxsnakegame.views.base.BoardView;
+import com.lcaohoanq.fxsnakegame.views.game.board.BoardView;
 
 public class Campaign extends BoardView {
     @Override

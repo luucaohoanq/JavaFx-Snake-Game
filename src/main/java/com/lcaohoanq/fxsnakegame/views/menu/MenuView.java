@@ -1,4 +1,4 @@
-package com.lcaohoanq.fxsnakegame.views;
+package com.lcaohoanq.fxsnakegame.views.menu;
 
 import com.lcaohoanq.fxsnakegame.controllers.MenuController;
 import com.lcaohoanq.fxsnakegame.controllers.ToggleHandler;
@@ -8,6 +8,7 @@ import com.lcaohoanq.fxsnakegame.styles.UIColors;
 import com.lcaohoanq.fxsnakegame.styles.UIHovers;
 import com.lcaohoanq.fxsnakegame.styles.UIImages;
 import com.lcaohoanq.fxsnakegame.styles.UISizes;
+import com.lcaohoanq.fxsnakegame.views.login.SwingLoginView;
 import com.lcaohoanq.fxsnakegame.views.base.AppComponent;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;

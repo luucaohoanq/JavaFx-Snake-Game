@@ -4,9 +4,9 @@ import com.lcaohoanq.fxsnakegame.constants.APIConstants;
 import com.lcaohoanq.fxsnakegame.exceptions.BadCredentialsException;
 import com.lcaohoanq.fxsnakegame.utils.ApiUtils;
 import com.lcaohoanq.fxsnakegame.utils.EnvUtils;
-import com.lcaohoanq.fxsnakegame.views.MenuView;
+import com.lcaohoanq.fxsnakegame.views.menu.MenuView;
 import com.lcaohoanq.fxsnakegame.views.utils.UIPrompts;
-import com.lcaohoanq.fxsnakegame.views.base.BaseResources;
+import com.lcaohoanq.fxsnakegame.views.base.AppFxBaseResources;
 import java.net.http.HttpResponse;
 import java.util.Map;
 import javafx.application.Platform;
@@ -30,7 +30,7 @@ import java.net.URI;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-public class LoginController extends BaseResources {
+public class LoginController extends AppFxBaseResources {
 
     @FXML
     private TextField usernameTextField;

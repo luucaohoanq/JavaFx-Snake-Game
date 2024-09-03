@@ -3,14 +3,14 @@ package com.lcaohoanq.fxsnakegame.controllers;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import com.lcaohoanq.fxsnakegame.views.SwingLoginView;
-import com.lcaohoanq.fxsnakegame.views.MenuView;
-import com.lcaohoanq.fxsnakegame.views.game.Snake;
+import com.lcaohoanq.fxsnakegame.views.login.SwingLoginView;
+import com.lcaohoanq.fxsnakegame.views.menu.MenuView;
+import com.lcaohoanq.fxsnakegame.views.game.GameMode;
 
 public class PlayController implements ActionListener {
     public static MenuView menuView;
     private SwingLoginView loginView;
-    private Snake snake;
+    private GameMode gameMode;
     private boolean isLoginView = false;
     private boolean isSnake = false;
 
@@ -19,8 +19,8 @@ public class PlayController implements ActionListener {
         isLoginView = true;
     }
 
-    public PlayController(Snake snake) {
-        this.snake = snake;
+    public PlayController(GameMode gameMode) {
+        this.gameMode = gameMode;
         isSnake = true;
     }
 
@@ -34,7 +34,7 @@ public class PlayController implements ActionListener {
             });
         }
         if (isSnake) {
-            snake.dispose();
+            gameMode.dispose();
             EventQueue.invokeLater(() -> {
                 menuView = new MenuView();
                 menuView.setVisible(true);

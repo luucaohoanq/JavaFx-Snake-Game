@@ -1,11 +1,11 @@
-package com.lcaohoanq.fxsnakegame.views.base;
+package com.lcaohoanq.fxsnakegame.views.game.board;
 
 import com.lcaohoanq.fxsnakegame.styles.UIBorders;
 import com.lcaohoanq.fxsnakegame.styles.UIColors;
 import com.lcaohoanq.fxsnakegame.styles.UIFonts;
 import com.lcaohoanq.fxsnakegame.styles.UILabels;
 import com.lcaohoanq.fxsnakegame.styles.UISizes;
-import com.lcaohoanq.fxsnakegame.views.MenuView;
+import com.lcaohoanq.fxsnakegame.views.menu.MenuView;
 import com.lcaohoanq.fxsnakegame.views.utils.UIPrompts;
 import java.awt.BorderLayout;
 import java.awt.Color;

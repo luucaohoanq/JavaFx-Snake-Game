@@ -2,6 +2,7 @@ package com.lcaohoanq.fxsnakegame.controllers;
 
 import com.lcaohoanq.fxsnakegame.constants.ResourcePaths;
 import com.lcaohoanq.fxsnakegame.enums.HoverElement;
+import com.lcaohoanq.fxsnakegame.views.game.GameMode;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,10 +14,9 @@ import java.util.List;
 import javax.swing.JButton;
 import com.lcaohoanq.fxsnakegame.utils.AudioUtils;
 import com.lcaohoanq.fxsnakegame.styles.UIHovers;
-import com.lcaohoanq.fxsnakegame.views.MenuView;
+import com.lcaohoanq.fxsnakegame.views.menu.MenuView;
 import com.lcaohoanq.fxsnakegame.views.utils.UIPrompts;
 import com.lcaohoanq.fxsnakegame.views.base.AppComponent;
-import com.lcaohoanq.fxsnakegame.views.game.Snake;
 
 public class MenuController implements MouseListener, ActionListener {
 
@@ -33,22 +33,22 @@ public class MenuController implements MouseListener, ActionListener {
         MenuController.menuView = menuView;
         this.audioUtils = AudioUtils.getInstance();
         this.jButtonList = Arrays.asList(
-            menuView.jButton_Mode_Classic,
-            menuView.jButton_Mode_Modern,
-            menuView.jButton_Mode_Campaign);
+            menuView.getJButton_Mode_Classic(),
+            menuView.getJButton_Mode_Modern(),
+            menuView.getJButton_Mode_Campaign());
         this.uiHovers = new UIHovers<>(menuView);
 
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        if (e.getSource() == menuView.jButton_Mode_Classic) {
+        if (e.getSource() == menuView.getJButton_Mode_Classic()) {
             EventQueue.invokeLater(() -> {
                 menuView.dispose();
-                new Snake("Classic").startGame();
+                new GameMode("Classic").startGame();
             });
         }
-        if (e.getSource() == menuView.jButton_Mode_Modern) {
+        if (e.getSource() == menuView.getJButton_Mode_Modern()) {
             EventQueue.invokeLater(() -> {
 
                 if (isMenuModern) {
@@ -62,7 +62,7 @@ public class MenuController implements MouseListener, ActionListener {
                 }
             });
         }
-        if (e.getSource() == menuView.jButton_Mode_Campaign) {
+        if (e.getSource() == menuView.getJButton_Mode_Campaign()) {
             EventQueue.invokeLater(() -> {
 //                menuView.dispose();
 //                new Snake("Campaign").startGame();
@@ -146,37 +146,37 @@ public class MenuController implements MouseListener, ActionListener {
             if (e.getSource() == menuModern.getJButton_NoMaze()) {
                 EventQueue.invokeLater(() -> {
                     menuView.dispose();
-                    new Snake("NoMaze").startGame();
+                    new GameMode("NoMaze").startGame();
                 });
             }
             if (e.getSource() == menuModern.getJButton_Box()) {
                 EventQueue.invokeLater(() -> {
                     menuView.dispose();
-                    new Snake("Box").startGame();
+                    new GameMode("Box").startGame();
                 });
             }
             if (e.getSource() == menuModern.getJButton_Tunnel()) {
                 EventQueue.invokeLater(() -> {
                     menuView.dispose();
-                    new Snake("Tunnel").startGame();
+                    new GameMode("Tunnel").startGame();
                 });
             }
             if (e.getSource() == menuModern.getJButton_Mill()) {
                 EventQueue.invokeLater(() -> {
                     menuView.dispose();
-                    new Snake("Mill").startGame();
+                    new GameMode("Mill").startGame();
                 });
             }
             if (e.getSource() == menuModern.getJButton_Rails()) {
                 EventQueue.invokeLater(() -> {
                     menuView.dispose();
-                    new Snake("Rails").startGame();
+                    new GameMode("Rails").startGame();
                 });
             }
             if (e.getSource() == menuModern.getJButton_Apartment()) {
                 EventQueue.invokeLater(() -> {
                     menuView.dispose();
-                    new Snake("Apartment").startGame();
+                    new GameMode("Apartment").startGame();
                 });
             }
         }

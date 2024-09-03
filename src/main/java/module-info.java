@@ -20,10 +20,23 @@ module com.lcaohoanq.fxsnakegame {
     opens com.lcaohoanq.fxsnakegame to javafx.fxml;
     opens com.lcaohoanq.fxsnakegame.views.base to javafx.fxml;
     exports com.lcaohoanq.fxsnakegame;
-    exports com.lcaohoanq.fxsnakegame.views;
-    opens com.lcaohoanq.fxsnakegame.views to javafx.fxml;
     exports com.lcaohoanq.fxsnakegame.controllers;
     opens com.lcaohoanq.fxsnakegame.controllers to javafx.fxml;
     exports com.lcaohoanq.fxsnakegame.views.utils;
     opens com.lcaohoanq.fxsnakegame.views.utils to javafx.fxml;
+    opens com.lcaohoanq.fxsnakegame.views.game.board to javafx.fxml;
+    exports com.lcaohoanq.fxsnakegame.views.changepassword;
+    opens com.lcaohoanq.fxsnakegame.views.changepassword to javafx.fxml;
+    exports com.lcaohoanq.fxsnakegame.views.menu;
+    opens com.lcaohoanq.fxsnakegame.views.menu to javafx.fxml;
+    exports com.lcaohoanq.fxsnakegame.views.info;
+    opens com.lcaohoanq.fxsnakegame.views.info to javafx.fxml;
+    exports com.lcaohoanq.fxsnakegame.views.otp;
+    opens com.lcaohoanq.fxsnakegame.views.otp to javafx.fxml;
+    opens com.lcaohoanq.fxsnakegame.views.score to javafx.fxml;
+    exports com.lcaohoanq.fxsnakegame.views.score;
+    opens com.lcaohoanq.fxsnakegame.views.login to javafx.fxml;
+    exports com.lcaohoanq.fxsnakegame.views.login;
+    exports com.lcaohoanq.fxsnakegame.views.register;
+    opens com.lcaohoanq.fxsnakegame.views.register to javafx.fxml;
 }

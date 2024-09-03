@@ -1,4 +1,4 @@
-package com.lcaohoanq.fxsnakegame.views.base;
+package com.lcaohoanq.fxsnakegame.views.game.board;
 
 import com.lcaohoanq.fxsnakegame.constants.APIConstants;
 import com.lcaohoanq.fxsnakegame.constants.ResourcePaths;

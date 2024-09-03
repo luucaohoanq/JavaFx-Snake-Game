@@ -1,7 +1,8 @@
-package com.lcaohoanq.fxsnakegame.views;
+package com.lcaohoanq.fxsnakegame.views.register;
 
 import com.lcaohoanq.fxsnakegame.controllers.RegisterController;
 import com.lcaohoanq.fxsnakegame.controllers.ToggleHandler;
+import com.lcaohoanq.fxsnakegame.views.base.AppFrame;
 import com.lcaohoanq.fxsnakegame.views.utils.UIPrompts;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -16,11 +17,10 @@ import com.lcaohoanq.fxsnakegame.styles.UIBorders;
 import com.lcaohoanq.fxsnakegame.styles.UIColors;
 import com.lcaohoanq.fxsnakegame.styles.UIFonts;
 import com.lcaohoanq.fxsnakegame.styles.UILabels;
-import com.lcaohoanq.fxsnakegame.views.base.MyFrame;
 
 @Deprecated
 @Getter
-public class SwingRegisterView extends MyFrame implements ToggleHandler {
+public class SwingRegisterView extends AppFrame implements ToggleHandler {
 
     private RegisterModel registerModel;
 

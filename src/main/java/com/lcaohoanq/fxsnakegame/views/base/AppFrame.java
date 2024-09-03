@@ -1,6 +1,6 @@
 package com.lcaohoanq.fxsnakegame.views.base;
 
-import com.lcaohoanq.fxsnakegame.views.InfoView;
+import com.lcaohoanq.fxsnakegame.views.info.InfoView;
 import com.lcaohoanq.fxsnakegame.controllers.ScoreController;
 import com.lcaohoanq.fxsnakegame.controllers.ToggleHandler;
 import java.awt.BorderLayout;
@@ -19,12 +19,12 @@ import com.lcaohoanq.fxsnakegame.styles.UIColors;
 import com.lcaohoanq.fxsnakegame.styles.UIImages;
 import com.lcaohoanq.fxsnakegame.styles.UILabels;
 import com.lcaohoanq.fxsnakegame.styles.UISizes;
-import com.lcaohoanq.fxsnakegame.views.MenuView;
-import com.lcaohoanq.fxsnakegame.views.ScoreView;
+import com.lcaohoanq.fxsnakegame.views.menu.MenuView;
+import com.lcaohoanq.fxsnakegame.views.score.ScoreView;
 
-public abstract class MyFrame extends AppComponent implements ToggleHandler{
+public abstract class AppFrame extends AppComponent implements ToggleHandler{
 
-    public MyFrame() {
+    public AppFrame() {
         setTitle(UILabels.WINDOW);
         setSize(UISizes.WIDTH_MY_FRAME, UISizes.HEIGHT_MY_FRAME);
         setIconImage(UIImages.icon);

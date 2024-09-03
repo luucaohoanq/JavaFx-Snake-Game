@@ -1,4 +1,4 @@
-package com.lcaohoanq.fxsnakegame.views;
+package com.lcaohoanq.fxsnakegame.views.info;
 
 import com.lcaohoanq.fxsnakegame.views.utils.UIPrompts;
 import java.awt.event.ActionEvent;

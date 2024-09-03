@@ -1,20 +1,20 @@
 package com.lcaohoanq.fxsnakegame.styles;
 
 import com.lcaohoanq.fxsnakegame.constants.ResourcePaths;
+import com.lcaohoanq.fxsnakegame.views.base.AppFrame;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
 import java.util.Objects;
 import javax.swing.ImageIcon;
-import com.lcaohoanq.fxsnakegame.views.base.MyFrame;
 import lombok.Getter;
 
 @Getter
 public class UIImages {
-    public static final URL iconURL = MyFrame.class.getResource(ResourcePaths.URL_KEY_ICON);
+    public static final URL iconURL = AppFrame.class.getResource(ResourcePaths.URL_KEY_ICON);
     public static final Image icon = Toolkit.getDefaultToolkit().createImage(iconURL);
 
-    public static final URL snakeURL = MyFrame.class.getResource(ResourcePaths.URL_SNAKE_LOGO);
+    public static final URL snakeURL = AppFrame.class.getResource(ResourcePaths.URL_SNAKE_LOGO);
     public static final Image logo = Toolkit.getDefaultToolkit().getImage(snakeURL);
     public static final ImageIcon logoIcon = new ImageIcon(logo);
 

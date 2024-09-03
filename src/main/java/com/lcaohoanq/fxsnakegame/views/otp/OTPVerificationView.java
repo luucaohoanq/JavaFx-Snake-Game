@@ -1,4 +1,4 @@
-package com.lcaohoanq.fxsnakegame.views;
+package com.lcaohoanq.fxsnakegame.views.otp;
 
 import com.lcaohoanq.fxsnakegame.controllers.OTPVerificationListener;
 import com.lcaohoanq.fxsnakegame.styles.UIColors;

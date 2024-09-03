@@ -1,8 +1,8 @@
-package com.lcaohoanq.fxsnakegame.views.game;
+package com.lcaohoanq.fxsnakegame.views.game.tunnel;
 
 import com.lcaohoanq.fxsnakegame.constants.ResourcePaths;
 import com.lcaohoanq.fxsnakegame.styles.UISizes;
-import com.lcaohoanq.fxsnakegame.views.base.BoardView;
+import com.lcaohoanq.fxsnakegame.views.game.board.BoardView;
 import java.awt.Graphics;
 import java.io.InputStream;
 import javax.swing.JFrame;

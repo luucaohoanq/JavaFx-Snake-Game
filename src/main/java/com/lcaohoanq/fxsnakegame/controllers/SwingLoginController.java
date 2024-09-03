@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
 import lombok.extern.slf4j.Slf4j;
 import com.lcaohoanq.fxsnakegame.styles.UIHovers;
 import com.lcaohoanq.fxsnakegame.utils.ApiUtils;
-import com.lcaohoanq.fxsnakegame.views.SwingLoginView;
+import com.lcaohoanq.fxsnakegame.views.login.SwingLoginView;
 import com.lcaohoanq.fxsnakegame.views.utils.UIPrompts;
 
 @Slf4j

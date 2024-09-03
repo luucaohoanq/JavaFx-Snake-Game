@@ -13,8 +13,8 @@ import lombok.extern.slf4j.Slf4j;
 import com.lcaohoanq.fxsnakegame.utils.EmailUtils;
 import com.lcaohoanq.fxsnakegame.utils.OTPUtils;
 import com.lcaohoanq.fxsnakegame.styles.UIHovers;
-import com.lcaohoanq.fxsnakegame.views.OTPVerificationView;
-import com.lcaohoanq.fxsnakegame.views.SwingRegisterView;
+import com.lcaohoanq.fxsnakegame.views.otp.OTPVerificationView;
+import com.lcaohoanq.fxsnakegame.views.register.SwingRegisterView;
 import com.lcaohoanq.fxsnakegame.views.utils.UIPrompts;
 
 @Slf4j

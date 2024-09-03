@@ -1,4 +1,4 @@
-package com.lcaohoanq.fxsnakegame.views;
+package com.lcaohoanq.fxsnakegame.views.score;
 
 import com.lcaohoanq.fxsnakegame.controllers.ScoreController;
 import com.lcaohoanq.fxsnakegame.styles.UIBorders;

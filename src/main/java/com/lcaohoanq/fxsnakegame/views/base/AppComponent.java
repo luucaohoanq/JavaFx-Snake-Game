@@ -28,7 +28,7 @@ import com.lcaohoanq.fxsnakegame.styles.UILabels;
 import com.lcaohoanq.fxsnakegame.styles.UISizes;
 
 @Getter
-public abstract class AppComponent extends JFrame {
+public abstract class AppComponent extends JFrame implements IAppAction {
 
     public static JPanel jPanel_Right_Bottom_Button = new JPanel();;
     protected final JMenu jMenu = new JMenu("HELP");
@@ -67,16 +67,16 @@ public abstract class AppComponent extends JFrame {
     protected JPanel jPanel_Left = new JPanel(new BorderLayout());
     protected JLabel jLabel_Left_Icon = new JLabel(
         new ImageIcon(new ImageIcon(
-            Toolkit.getDefaultToolkit().getImage(MyFrame.class.getResource(ResourcePaths.URL_SNAKE_LOGO))).getImage().getScaledInstance(250, 250, Image.SCALE_SMOOTH)));;
+            Toolkit.getDefaultToolkit().getImage(AppFrame.class.getResource(ResourcePaths.URL_SNAKE_LOGO))).getImage().getScaledInstance(250, 250, Image.SCALE_SMOOTH)));;
     protected JMenuBar jMenuBar = new JMenuBar();
     protected Cursor cursor = new Cursor(Cursor.HAND_CURSOR);
 
     // MenuView
-    public JButton jButton_Mode_Classic = new JButton("Classic");;
-    public JButton jButton_Mode_Modern = new JButton("Modern");;
-    public JButton jButton_Mode_Campaign = new JButton("Campaign");;
-    protected JPanel jPanel_Container_MenuView = new JPanel(new BorderLayout());;
-    protected JLabel jLabel_Title_MenuView = new JLabel("Snake Game", JLabel.CENTER);;
+    protected JButton jButton_Mode_Classic = new JButton("Classic");
+    protected JButton jButton_Mode_Modern = new JButton("Modern");
+    protected JButton jButton_Mode_Campaign = new JButton("Campaign");
+    protected JPanel jPanel_Container_MenuView = new JPanel(new BorderLayout());
+    protected JLabel jLabel_Title_MenuView = new JLabel("Snake Game", JLabel.CENTER);
     protected JPanel jPanel_Button_MenuView = new JPanel(new GridLayout(3, 1, 30, 20));;
     protected JMenuBar jMenuBar_MenuView;
     protected final JMenu jMenu_Back_To_Main_Menu = new JMenu("Back to");
@@ -103,8 +103,7 @@ public abstract class AppComponent extends JFrame {
         super();
         doStyling();
     }
-    public abstract void initComponents();
-    public abstract void doAction();
+
     private void doStyling(){
         jPanel_Right_Bottom_Button.setBackground(UIColors.PRIMARY_COLOR_L);
         jPanel_Right_Bottom_Button.setBorder(UIBorders.BUTTON);

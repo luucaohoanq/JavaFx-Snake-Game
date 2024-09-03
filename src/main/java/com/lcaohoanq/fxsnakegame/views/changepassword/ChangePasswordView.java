@@ -1,4 +1,4 @@
-package com.lcaohoanq.fxsnakegame.views;
+package com.lcaohoanq.fxsnakegame.views.changepassword;
 
 import com.lcaohoanq.fxsnakegame.constants.APIConstants;
 import com.lcaohoanq.fxsnakegame.models.RegisterModel;

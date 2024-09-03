@@ -2,6 +2,13 @@ package com.lcaohoanq.fxsnakegame.views.game;
 
 import com.lcaohoanq.fxsnakegame.controllers.MenuController;
 import com.lcaohoanq.fxsnakegame.controllers.PlayController;
+import com.lcaohoanq.fxsnakegame.views.game.apartment.Apartment;
+import com.lcaohoanq.fxsnakegame.views.game.box.Box;
+import com.lcaohoanq.fxsnakegame.views.game.campaign.Campaign;
+import com.lcaohoanq.fxsnakegame.views.game.mill.Mill;
+import com.lcaohoanq.fxsnakegame.views.game.nomaze.NoMaze;
+import com.lcaohoanq.fxsnakegame.views.game.rails.Rails;
+import com.lcaohoanq.fxsnakegame.views.game.tunnel.Tunnel;
 import java.awt.FlowLayout;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -10,12 +17,12 @@ import javax.swing.JMenuItem;
 import com.lcaohoanq.fxsnakegame.styles.UIBorders;
 import com.lcaohoanq.fxsnakegame.styles.UIImages;
 
-public class Snake extends JFrame {
+public class GameMode extends JFrame {
     private final JMenuBar jMenuBar = new JMenuBar();
     private final JMenu jMenu = new JMenu("HELP");
     private final JMenuItem jMenuItem_Back_To_Main_Menu = new JMenuItem("Back to main menu");
 
-    public Snake(String mode) {
+    public GameMode(String mode) {
         initMenu();
         initUI(mode);
     }
@@ -76,4 +83,5 @@ public class Snake extends JFrame {
     public void stopGame() {
         dispose();
     }
+
 }

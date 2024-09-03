@@ -1,10 +1,11 @@
-package com.lcaohoanq.fxsnakegame.views;
+package com.lcaohoanq.fxsnakegame.views.login;
 
 import com.lcaohoanq.fxsnakegame.controllers.SwingLoginController;
 import com.lcaohoanq.fxsnakegame.constants.ResourcePaths;
 import com.lcaohoanq.fxsnakegame.controllers.ForgotPasswordController;
 import com.lcaohoanq.fxsnakegame.controllers.PlayController;
 import com.lcaohoanq.fxsnakegame.controllers.ToggleHandler;
+import com.lcaohoanq.fxsnakegame.views.otp.OTPVerificationView;
 import com.lcaohoanq.fxsnakegame.views.utils.UIPrompts;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
@@ -20,11 +21,11 @@ import com.lcaohoanq.fxsnakegame.styles.UIColors;
 import com.lcaohoanq.fxsnakegame.styles.UIFonts;
 import com.lcaohoanq.fxsnakegame.styles.UILabels;
 import com.lcaohoanq.fxsnakegame.styles.UISizes;
-import com.lcaohoanq.fxsnakegame.views.base.MyFrame;
+import com.lcaohoanq.fxsnakegame.views.base.AppFrame;
 
 @Deprecated
 @Getter
-public class SwingLoginView extends MyFrame implements ToggleHandler{
+public class SwingLoginView extends AppFrame implements ToggleHandler{
 
     private CardLayout cardLayout;
     private final LoginModel loginModel;

@@ -12,7 +12,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public abstract class BaseResources implements Initializable {
+public abstract class AppFxBaseResources implements Initializable {
 
     @FXML
     protected ImageView brandingImageView;
