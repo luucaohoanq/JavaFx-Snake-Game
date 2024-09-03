@@ -74,25 +74,6 @@ public abstract class BoardView extends BoardComponent implements ActionListener
         });
     }
 
-    protected void renderProgressBar() {
-        // Display the progress bar
-        bigAppleProgressBar.setVisible(true);
-        // Start the progress bar
-        bigAppleProgressBar.setValue(100);
-        // Start the timer
-        Timer progressBarTimer = new Timer(45, e -> {
-            int value = bigAppleProgressBar.getValue();
-            if (value > 0) {
-                bigAppleProgressBar.setValue(value - 1);
-            } else {
-                ((Timer) e.getSource()).stop();
-            }
-        });
-        progressBarTimer.start();
-    }
-
-
-
     private void initGame() {
 
         dots = 3;

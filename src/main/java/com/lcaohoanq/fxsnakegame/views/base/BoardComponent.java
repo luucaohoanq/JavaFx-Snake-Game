@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.SwingUtilities;
+import javax.swing.Timer;
 import lombok.Getter;
 
 @Getter
@@ -147,6 +148,23 @@ public class BoardComponent extends JPanel {
         gameOverButtonPanel.add(backToMainMenuButtonPanel, BorderLayout.SOUTH);
         gameOverButtonPanel.setVisible(false);
         add(gameOverButtonPanel, BorderLayout.CENTER);
+    }
+
+    protected void renderProgressBar() {
+        // Display the progress bar
+        bigAppleProgressBar.setVisible(true);
+        // Start the progress bar
+        bigAppleProgressBar.setValue(100);
+        // Start the timer
+        Timer progressBarTimer = new Timer(45, e -> {
+            int value = bigAppleProgressBar.getValue();
+            if (value > 0) {
+                bigAppleProgressBar.setValue(value - 1);
+            } else {
+                ((Timer) e.getSource()).stop();
+            }
+        });
+        progressBarTimer.start();
     }
 
 }
