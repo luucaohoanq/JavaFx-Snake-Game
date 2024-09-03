@@ -1,4 +1,4 @@
-package com.lcaohoanq.fxsnakegame.dto;
+package com.lcaohoanq.fxsnakegame.dtos;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;

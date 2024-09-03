@@ -2,6 +2,13 @@ package com.lcaohoanq.fxsnakegame.views;
 
 import com.lcaohoanq.fxsnakegame.controllers.MenuController;
 import com.lcaohoanq.fxsnakegame.controllers.ToggleHandler;
+import com.lcaohoanq.fxsnakegame.modules.sound.AudioHandler;
+import com.lcaohoanq.fxsnakegame.styles.UIBorders;
+import com.lcaohoanq.fxsnakegame.styles.UIColors;
+import com.lcaohoanq.fxsnakegame.styles.UIHovers;
+import com.lcaohoanq.fxsnakegame.styles.UIImages;
+import com.lcaohoanq.fxsnakegame.styles.UISizes;
+import com.lcaohoanq.fxsnakegame.views.base.AppComponent;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
@@ -10,13 +17,6 @@ import java.awt.event.ActionListener;
 import java.util.Objects;
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
-import com.lcaohoanq.fxsnakegame.modules.sound.AudioHandler;
-import com.lcaohoanq.fxsnakegame.styles.UIBorders;
-import com.lcaohoanq.fxsnakegame.styles.UIColors;
-import com.lcaohoanq.fxsnakegame.styles.UIHovers;
-import com.lcaohoanq.fxsnakegame.styles.UIImages;
-import com.lcaohoanq.fxsnakegame.styles.UISizes;
-import com.lcaohoanq.fxsnakegame.views.base.AppComponent;
 
 public class MenuView extends AppComponent implements ToggleHandler {
     boolean isActive;
