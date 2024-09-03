@@ -46,7 +46,7 @@ public class NoMaze extends Board {
         if (!inGame) {
             if (isOnSound()) {
                 InputStream inputStream = getClass().getResourceAsStream(ResourcePaths.URL_GAME_OVER);
-                audioHandler.playAudio(inputStream);
+                audioUtils.playAudio(inputStream);
             }
             timer.stop();
         }
@@ -72,7 +72,7 @@ public class NoMaze extends Board {
         if (isOnSound()) {
 //            audioHandler.setAudio(audioHandler.formatAudioPath(getClass().getResource(Paths.URL_BIG_APPLE_APP).getPath()));
             InputStream inputStream = getClass().getResourceAsStream(ResourcePaths.URL_BIG_APPLE_APP);
-            audioHandler.playAudio(inputStream);
+            audioUtils.playAudio(inputStream);
         }
         int r = (int) (Math.random() * RAND_POS);
         bigApple_x = ((r * DOT_SIZE));

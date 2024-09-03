@@ -1,16 +1,12 @@
-package com.lcaohoanq.fxsnakegame.modules.user;
+package com.lcaohoanq.fxsnakegame.daos;
 
-import com.lcaohoanq.fxsnakegame.constants.ErrorMessages;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.ParameterMode;
 import jakarta.persistence.Persistence;
 import jakarta.persistence.StoredProcedureQuery;
-import java.util.ArrayList;
-import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.query.Query;
 
 @Deprecated
 public class UserDAO {

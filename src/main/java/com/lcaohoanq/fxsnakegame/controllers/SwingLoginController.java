@@ -3,7 +3,7 @@ package com.lcaohoanq.fxsnakegame.controllers;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.lcaohoanq.fxsnakegame.enums.Hover;
+import com.lcaohoanq.fxsnakegame.enums.HoverElement;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -18,7 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 import com.lcaohoanq.fxsnakegame.styles.UIHovers;
 import com.lcaohoanq.fxsnakegame.utils.ApiUtils;
 import com.lcaohoanq.fxsnakegame.views.SwingLoginView;
-import com.lcaohoanq.fxsnakegame.views.UIPrompts;
+import com.lcaohoanq.fxsnakegame.views.utils.UIPrompts;
 
 @Slf4j
 public final class SwingLoginController implements ActionListener, MouseListener {
@@ -113,31 +113,31 @@ public final class SwingLoginController implements ActionListener, MouseListener
     public void mouseEntered(MouseEvent e) {
         if (e.getSource() == loginView.getJTextField_Right_Middle_Email()) {
             if (!loginView.getStatusToggle()) {
-                uiHovers.setHoverEmail(Hover.ENABLE.isStatus(), "light");
+                uiHovers.setHoverEmail(HoverElement.ENABLE.isStatus(), "light");
             } else {
-                uiHovers.setHoverEmail(Hover.ENABLE.isStatus(), "dark");
+                uiHovers.setHoverEmail(HoverElement.ENABLE.isStatus(), "dark");
             }
         }
         if (e.getSource() == loginView.getJPasswordField_Right_Middle_Password()) {
             if (!loginView.getStatusToggle()) {
-                uiHovers.setHoverEmail(Hover.ENABLE.isStatus(), "light");
+                uiHovers.setHoverEmail(HoverElement.ENABLE.isStatus(), "light");
 
             } else {
-                uiHovers.setHoverEmail(Hover.ENABLE.isStatus(), "dark");
+                uiHovers.setHoverEmail(HoverElement.ENABLE.isStatus(), "dark");
             }
         }
         if (e.getSource() == loginView.getJButton_Right_Bottom_Submit()) {
             if (!loginView.getStatusToggle()) {
-                uiHovers.setHoverEmail(Hover.ENABLE.isStatus(), "light");
+                uiHovers.setHoverEmail(HoverElement.ENABLE.isStatus(), "light");
             } else {
-                uiHovers.setHoverEmail(Hover.ENABLE.isStatus(), "dark");
+                uiHovers.setHoverEmail(HoverElement.ENABLE.isStatus(), "dark");
             }
         }
         if (e.getSource() == loginView.getJButton_Right_Bottom_Others()) {
-            uiHovers.setHoverOther(Hover.ENABLE.isStatus());
+            uiHovers.setHoverOther(HoverElement.ENABLE.isStatus());
         }
         if (e.getSource() == loginView.getJButton_Right_Bottom_Forgot_Password()) {
-            uiHovers.setHoverForgotPassword(Hover.ENABLE.isStatus());
+            uiHovers.setHoverForgotPassword(HoverElement.ENABLE.isStatus());
         }
     }
 
@@ -145,44 +145,44 @@ public final class SwingLoginController implements ActionListener, MouseListener
     public void mouseExited(MouseEvent e) {
         if (e.getSource() == loginView.getJTextField_Right_Middle_Email()) {
             if (!loginView.getStatusToggle()) {
-                uiHovers.setHoverEmail(Hover.DISABLE.isStatus(), "light");
+                uiHovers.setHoverEmail(HoverElement.DISABLE.isStatus(), "light");
             } else {
-                uiHovers.setHoverEmail(Hover.DISABLE.isStatus(), "dark");
+                uiHovers.setHoverEmail(HoverElement.DISABLE.isStatus(), "dark");
             }
         }
         if (e.getSource() == loginView.getJTextField_Right_Middle_FirstName()) {
             if (!loginView.getStatusToggle()) {
-                uiHovers.setHoverFirstName(Hover.DISABLE.isStatus(), "light");
+                uiHovers.setHoverFirstName(HoverElement.DISABLE.isStatus(), "light");
             } else {
-                uiHovers.setHoverFirstName(Hover.DISABLE.isStatus(), "dark");
+                uiHovers.setHoverFirstName(HoverElement.DISABLE.isStatus(), "dark");
             }
         }
         if (e.getSource() == loginView.getJTextField_Right_Middle_LastName()) {
             if (!loginView.getStatusToggle()) {
-                uiHovers.setHoverLastName(Hover.DISABLE.isStatus(), "light");
+                uiHovers.setHoverLastName(HoverElement.DISABLE.isStatus(), "light");
             } else {
-                uiHovers.setHoverLastName(Hover.DISABLE.isStatus(), "dark");
+                uiHovers.setHoverLastName(HoverElement.DISABLE.isStatus(), "dark");
             }
         }
         if (e.getSource() == loginView.getJPasswordField_Right_Middle_Password()) {
             if (!loginView.getStatusToggle()) {
-                uiHovers.setHoverPassword(Hover.DISABLE.isStatus(), "light");
+                uiHovers.setHoverPassword(HoverElement.DISABLE.isStatus(), "light");
             } else {
-                uiHovers.setHoverPassword(Hover.DISABLE.isStatus(), "dark");
+                uiHovers.setHoverPassword(HoverElement.DISABLE.isStatus(), "dark");
             }
         }
         if (e.getSource() == loginView.getJButton_Right_Bottom_Submit()) {
             if (!loginView.getStatusToggle()) {
-                uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "light");
+                uiHovers.setHoverButton(HoverElement.DISABLE.isStatus(), "light");
             } else {
-                uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "dark");
+                uiHovers.setHoverButton(HoverElement.DISABLE.isStatus(), "dark");
             }
         }
         if (e.getSource() == loginView.getJButton_Right_Bottom_Others()) {
-            uiHovers.setHoverOther(Hover.DISABLE.isStatus());
+            uiHovers.setHoverOther(HoverElement.DISABLE.isStatus());
         }
         if (e.getSource() == loginView.getJButton_Right_Bottom_Forgot_Password()) {
-            uiHovers.setHoverForgotPassword(Hover.DISABLE.isStatus());
+            uiHovers.setHoverForgotPassword(HoverElement.DISABLE.isStatus());
         }
     }
 }

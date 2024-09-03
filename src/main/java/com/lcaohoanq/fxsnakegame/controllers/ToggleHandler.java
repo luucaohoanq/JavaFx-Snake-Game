@@ -1,6 +1,6 @@
 package com.lcaohoanq.fxsnakegame.controllers;
 
-import com.lcaohoanq.fxsnakegame.views.Toggle;
+import com.lcaohoanq.fxsnakegame.views.utils.Toggle;
 
 public interface ToggleHandler {
     Toggle toggleButton = new Toggle();

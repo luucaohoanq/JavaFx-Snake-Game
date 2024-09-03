@@ -1,4 +1,4 @@
-package com.lcaohoanq.fxsnakegame.views;
+package com.lcaohoanq.fxsnakegame.views.utils;
 
 import com.lcaohoanq.fxsnakegame.controllers.EventSwitchSelected;
 import java.awt.AlphaComposite;

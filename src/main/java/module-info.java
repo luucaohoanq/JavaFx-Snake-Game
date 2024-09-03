@@ -24,4 +24,6 @@ module com.lcaohoanq.fxsnakegame {
     opens com.lcaohoanq.fxsnakegame.views to javafx.fxml;
     exports com.lcaohoanq.fxsnakegame.controllers;
     opens com.lcaohoanq.fxsnakegame.controllers to javafx.fxml;
+    exports com.lcaohoanq.fxsnakegame.views.utils;
+    opens com.lcaohoanq.fxsnakegame.views.utils to javafx.fxml;
 }

@@ -1,9 +1,9 @@
 package com.lcaohoanq.fxsnakegame.models;
 
 import com.lcaohoanq.fxsnakegame.constants.Regex;
-//import com.lcaohoanq.fxsnakegame.modules.user.UserDAO;
-import com.lcaohoanq.fxsnakegame.modules.user.UserDAO;
-import com.lcaohoanq.fxsnakegame.modules.user.UserDTO;
+//import com.lcaohoanq.fxsnakegame.daos.UserDAO;
+import com.lcaohoanq.fxsnakegame.daos.UserDAO;
+import com.lcaohoanq.fxsnakegame.dtos.UserDTO;
 import com.lcaohoanq.fxsnakegame.utils.PBKDF2;
 import lombok.extern.slf4j.Slf4j;
 

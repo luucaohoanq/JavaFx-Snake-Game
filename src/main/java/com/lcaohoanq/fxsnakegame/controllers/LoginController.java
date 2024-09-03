@@ -1,10 +1,11 @@
 package com.lcaohoanq.fxsnakegame.controllers;
 
 import com.lcaohoanq.fxsnakegame.constants.APIConstants;
+import com.lcaohoanq.fxsnakegame.exceptions.BadCredentialsException;
 import com.lcaohoanq.fxsnakegame.utils.ApiUtils;
 import com.lcaohoanq.fxsnakegame.utils.EnvUtils;
 import com.lcaohoanq.fxsnakegame.views.MenuView;
-import com.lcaohoanq.fxsnakegame.views.UIPrompts;
+import com.lcaohoanq.fxsnakegame.views.utils.UIPrompts;
 import com.lcaohoanq.fxsnakegame.views.base.BaseResources;
 import java.net.http.HttpResponse;
 import java.util.Map;
@@ -112,13 +113,13 @@ public class LoginController extends BaseResources {
                     case 400:
                         JOptionPane.showMessageDialog(null,
                             "Username or password is incorrect, please try again!");
-                        break;
+                        throw new BadCredentialsException("Username or password is incorrect");
                     default:
                         JOptionPane.showMessageDialog(null,
                             "Internal server error, please try again later!");
                         break;
                 }
-            } catch (IOException | InterruptedException ex) {
+            } catch (IOException | InterruptedException | BadCredentialsException ex) {
                 JOptionPane.showMessageDialog(null, "An error occurred: " + ex.getMessage());
             }
         }).start();

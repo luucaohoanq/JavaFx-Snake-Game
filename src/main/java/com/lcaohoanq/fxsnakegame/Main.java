@@ -1,15 +1,14 @@
 package com.lcaohoanq.fxsnakegame;
 
+import com.lcaohoanq.fxsnakegame.constants.ResourcePaths;
+import com.lcaohoanq.fxsnakegame.utils.AudioUtils;
 import com.lcaohoanq.fxsnakegame.utils.LogsUtils;
-import com.lcaohoanq.fxsnakegame.views.SwingLoginView;
-import java.awt.EventQueue;
+import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
-import java.io.IOException;
 
 public class Main extends Application {
     @Override
@@ -25,6 +24,9 @@ public class Main extends Application {
     public static void main(String[] args) {
 
         LogsUtils.ensureLogsFolderExists();
+
+        new AudioUtils().playAudio(Main.class.getResourceAsStream(
+            ResourcePaths.URL_INTRO));
 
         launch();
     }

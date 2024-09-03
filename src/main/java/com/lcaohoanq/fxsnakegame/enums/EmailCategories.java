@@ -1,4 +1,4 @@
-package com.lcaohoanq.fxsnakegame.modules.email;
+package com.lcaohoanq.fxsnakegame.enums;
 
 import lombok.Getter;
 

@@ -1,6 +1,6 @@
 package com.lcaohoanq.fxsnakegame.views.base;
 
-import com.lcaohoanq.fxsnakegame.views.Info;
+import com.lcaohoanq.fxsnakegame.views.InfoView;
 import com.lcaohoanq.fxsnakegame.controllers.ScoreController;
 import com.lcaohoanq.fxsnakegame.controllers.ToggleHandler;
 import java.awt.BorderLayout;
@@ -180,7 +180,7 @@ public abstract class MyFrame extends AppComponent implements ToggleHandler{
     @Override
     public void doAction() {
         jMenuItem_Go.addActionListener(new ClickPlayNow());
-        jMenuItem_AboutMe.addActionListener(new Info());
+        jMenuItem_AboutMe.addActionListener(new InfoView());
         jMenuItem_Score.addActionListener(new ScoreController(new ScoreView()));
     }
 

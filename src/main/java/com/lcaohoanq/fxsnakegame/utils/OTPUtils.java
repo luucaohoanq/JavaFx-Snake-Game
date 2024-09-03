@@ -1,4 +1,4 @@
-package com.lcaohoanq.fxsnakegame.modules.otp;
+package com.lcaohoanq.fxsnakegame.utils;
 
 import javax.swing.JOptionPane;
 

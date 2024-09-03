@@ -20,7 +20,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import lombok.Getter;
-import com.lcaohoanq.fxsnakegame.modules.sound.AudioHandler;
+import com.lcaohoanq.fxsnakegame.utils.AudioUtils;
 import com.lcaohoanq.fxsnakegame.styles.UIBorders;
 import com.lcaohoanq.fxsnakegame.styles.UIColors;
 import com.lcaohoanq.fxsnakegame.styles.UIFonts;
@@ -63,7 +63,7 @@ public abstract class AppComponent extends JFrame {
     protected JPanel jPanel_Right_Bottom_Option = new JPanel();;
     protected JLabel jLabel_Right_Bottom_Option;
     protected JPanel jPanel_Left_Icon = new JPanel(new BorderLayout());;
-    protected AudioHandler audioHandler = new AudioHandler();
+    protected AudioUtils audioUtils = new AudioUtils();
     protected JPanel jPanel_Left = new JPanel(new BorderLayout());;
     protected JLabel jLabel_Left_Icon = new JLabel(
         new ImageIcon(new ImageIcon(

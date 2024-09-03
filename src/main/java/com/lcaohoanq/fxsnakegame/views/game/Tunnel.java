@@ -145,7 +145,7 @@ public class Tunnel extends Board {
         if (!inGame) {
             if (isOnSound()) {
                 InputStream inputStream = getClass().getResourceAsStream(ResourcePaths.URL_GAME_OVER);
-                audioHandler.playAudio(inputStream);
+                audioUtils.playAudio(inputStream);
             }
             timer.stop();
         }
@@ -170,7 +170,7 @@ public class Tunnel extends Board {
     protected void locateBigApple() {
         if (isOnSound()) {
             InputStream inputStream = getClass().getResourceAsStream(ResourcePaths.URL_BIG_APPLE_APP);
-            audioHandler.playAudio(inputStream);
+            audioUtils.playAudio(inputStream);
         }
         int r = (int) (Math.random() * (RAND_POS - 2 * wallThickness));
         bigApple_x = ((r + wallThickness) * DOT_SIZE);

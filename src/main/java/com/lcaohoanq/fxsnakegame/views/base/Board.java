@@ -3,7 +3,6 @@ package com.lcaohoanq.fxsnakegame.views.base;
 import com.lcaohoanq.fxsnakegame.constants.APIConstants;
 import com.lcaohoanq.fxsnakegame.constants.ResourcePaths;
 import com.lcaohoanq.fxsnakegame.controllers.LoginController;
-import com.lcaohoanq.fxsnakegame.controllers.SwingLoginController;
 import com.lcaohoanq.fxsnakegame.utils.ApiUtils;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -16,9 +15,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.InputStream;
-import java.net.http.HttpClient;
 import java.net.http.HttpResponse;
-import java.util.Objects;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -27,15 +24,15 @@ import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.SwingUtilities;
 import javax.swing.Timer;
-import com.lcaohoanq.fxsnakegame.modules.sound.AudioHandler;
-//import com.lcaohoanq.fxsnakegame.modules.user.UserDAO;
+import com.lcaohoanq.fxsnakegame.utils.AudioUtils;
+//import com.lcaohoanq.fxsnakegame.daos.UserDAO;
 import com.lcaohoanq.fxsnakegame.styles.UIBorders;
 import com.lcaohoanq.fxsnakegame.styles.UIColors;
 import com.lcaohoanq.fxsnakegame.styles.UIFonts;
 import com.lcaohoanq.fxsnakegame.styles.UILabels;
 import com.lcaohoanq.fxsnakegame.styles.UISizes;
 import com.lcaohoanq.fxsnakegame.views.MenuView;
-import com.lcaohoanq.fxsnakegame.views.UIPrompts;
+import com.lcaohoanq.fxsnakegame.views.utils.UIPrompts;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -59,7 +56,7 @@ public abstract class Board extends JPanel implements ActionListener {
     protected int apple_y;                       // Y-coordinate of a regular apple
     // Game timers and images
     protected Timer timer;                       // Timer for regular game events
-    protected AudioHandler audioHandler = new AudioHandler();
+    protected AudioUtils audioUtils = new AudioUtils();
     // Snake movement directions
     protected boolean leftDirection = false;     // Flag for moving left
     protected boolean rightDirection = true;     // Flag for moving right
@@ -377,7 +374,7 @@ public abstract class Board extends JPanel implements ActionListener {
                 if (isOnSound()) {
                     InputStream inputStream = getClass().getResourceAsStream(
                         ResourcePaths.URL_EATING2);
-                    audioHandler.playAudio(inputStream);
+                    audioUtils.playAudio(inputStream);
                 }
             }
             return;
@@ -401,7 +398,7 @@ public abstract class Board extends JPanel implements ActionListener {
             locateApple();
             if (isOnSound()) {
                 InputStream inputStream = getClass().getResourceAsStream(ResourcePaths.URL_EATING);
-                audioHandler.playAudio(inputStream);
+                audioUtils.playAudio(inputStream);
             }
         }
     }
@@ -458,7 +455,7 @@ public abstract class Board extends JPanel implements ActionListener {
             if (isOnSound()) {
                 InputStream inputStream = getClass().getResourceAsStream(
                     ResourcePaths.URL_BIG_APPLE_DIS);
-                audioHandler.playAudio(inputStream);
+                audioUtils.playAudio(inputStream);
             }
             apple_count = 0;
             locateApple();
@@ -469,8 +466,8 @@ public abstract class Board extends JPanel implements ActionListener {
     }
 
     protected boolean isOnSound() {
-        System.out.println("check is On Sound: " + !audioHandler.isEmptyPath());
-        return !audioHandler.isEmptyPath();
+        System.out.println("check is On Sound: " + !audioUtils.isEmptyPath());
+        return !audioUtils.isEmptyPath();
     }
 
     @Override

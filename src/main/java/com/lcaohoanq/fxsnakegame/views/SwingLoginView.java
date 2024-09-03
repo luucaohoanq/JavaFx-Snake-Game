@@ -5,6 +5,7 @@ import com.lcaohoanq.fxsnakegame.constants.ResourcePaths;
 import com.lcaohoanq.fxsnakegame.controllers.ForgotPasswordController;
 import com.lcaohoanq.fxsnakegame.controllers.PlayController;
 import com.lcaohoanq.fxsnakegame.controllers.ToggleHandler;
+import com.lcaohoanq.fxsnakegame.views.utils.UIPrompts;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.GridLayout;
@@ -14,13 +15,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import lombok.Getter;
 import com.lcaohoanq.fxsnakegame.models.LoginModel;
-import com.lcaohoanq.fxsnakegame.modules.user.UserDTO;
+import com.lcaohoanq.fxsnakegame.dtos.UserDTO;
 import com.lcaohoanq.fxsnakegame.styles.UIColors;
 import com.lcaohoanq.fxsnakegame.styles.UIFonts;
 import com.lcaohoanq.fxsnakegame.styles.UILabels;
 import com.lcaohoanq.fxsnakegame.styles.UISizes;
 import com.lcaohoanq.fxsnakegame.views.base.MyFrame;
 
+@Deprecated
 @Getter
 public class SwingLoginView extends MyFrame implements ToggleHandler{
 
@@ -33,7 +35,7 @@ public class SwingLoginView extends MyFrame implements ToggleHandler{
         super();
         this.loginModel = new LoginModel();
         InputStream inputStream = getClass().getResourceAsStream(ResourcePaths.URL_INTRO);
-        audioHandler.playAudio(inputStream);
+        audioUtils.playAudio(inputStream);
         // Initialize OTPVerificationView
     }
 

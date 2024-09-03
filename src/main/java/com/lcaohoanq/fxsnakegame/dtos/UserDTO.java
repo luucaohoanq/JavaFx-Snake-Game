@@ -1,4 +1,4 @@
-package com.lcaohoanq.fxsnakegame.modules.user;
+package com.lcaohoanq.fxsnakegame.dtos;
 
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 @Data
 @Builder

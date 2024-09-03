@@ -2,7 +2,7 @@ package com.lcaohoanq.fxsnakegame.views;
 
 import com.lcaohoanq.fxsnakegame.controllers.MenuController;
 import com.lcaohoanq.fxsnakegame.controllers.ToggleHandler;
-import com.lcaohoanq.fxsnakegame.modules.sound.AudioHandler;
+import com.lcaohoanq.fxsnakegame.utils.AudioUtils;
 import com.lcaohoanq.fxsnakegame.styles.UIBorders;
 import com.lcaohoanq.fxsnakegame.styles.UIColors;
 import com.lcaohoanq.fxsnakegame.styles.UIHovers;
@@ -17,10 +17,13 @@ import java.awt.event.ActionListener;
 import java.util.Objects;
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 public class MenuView extends AppComponent implements ToggleHandler {
-    boolean isActive;
-    private UIHovers<MenuView> uiHovers;
+    private final UIHovers<MenuView> uiHovers;
+    private final AudioUtils audioUtils;
+
     public MenuView() {
         setTitle("Snake Game");
         setSize(UISizes.HEIGHT_MY_FRAME, UISizes.HEIGHT_MY_FRAME);
@@ -30,6 +33,7 @@ public class MenuView extends AppComponent implements ToggleHandler {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         initUI();
         this.uiHovers = new UIHovers<>(this);
+        this.audioUtils = new AudioUtils();
     }
 
     @Override
@@ -114,11 +118,11 @@ public class MenuView extends AppComponent implements ToggleHandler {
 
     public void setAudio(boolean msg) {
         if (!msg) {
-            AudioHandler.path = false;
-            System.out.println("path update nek: " + AudioHandler.path);
+            audioUtils.setPath(false);
+            System.out.println("path update nek: " + audioUtils.isPath());
             System.out.println("set audio nhan gia tri null: " + msg);
         } else {
-            AudioHandler.path = true;
+            audioUtils.setPath(true);
             System.out.println("set audio nhan gia tri: " + msg);
         }
     }

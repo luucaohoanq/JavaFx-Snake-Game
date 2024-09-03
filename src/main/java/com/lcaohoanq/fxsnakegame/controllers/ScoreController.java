@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-//import com.lcaohoanq.fxsnakegame.modules.user.UserDAO;
+//import com.lcaohoanq.fxsnakegame.daos.UserDAO;
 import com.lcaohoanq.fxsnakegame.utils.ApiUtils;
 import com.lcaohoanq.fxsnakegame.views.ScoreView;
 import java.awt.event.ActionEvent;

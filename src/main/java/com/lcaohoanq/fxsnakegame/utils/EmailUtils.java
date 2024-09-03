@@ -1,7 +1,5 @@
-package com.lcaohoanq.fxsnakegame.modules.email;
+package com.lcaohoanq.fxsnakegame.utils;
 
-import com.lcaohoanq.fxsnakegame.modules.otp.OTPUtils;
-import com.lcaohoanq.fxsnakegame.utils.EnvUtils;
 import java.util.Properties;
 import java.util.regex.Pattern;
 import javax.mail.Authenticator;

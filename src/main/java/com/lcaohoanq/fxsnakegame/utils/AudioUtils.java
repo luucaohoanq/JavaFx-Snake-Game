@@ -1,4 +1,4 @@
-package com.lcaohoanq.fxsnakegame.modules.sound;
+package com.lcaohoanq.fxsnakegame.utils;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -6,12 +6,16 @@ import java.io.InputStream;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import lombok.Getter;
+import lombok.Setter;
 
-public class AudioHandler {
-    public static InputStream inputStreamCurrent;
-    public static boolean path = true;
-    private static AudioInputStream audioInputStream;
-    private static Clip clip;
+@Getter
+@Setter
+public class AudioUtils {
+    private InputStream inputStreamCurrent;
+    private AudioInputStream audioInputStream;
+    private Clip clip;
+    private boolean path = true;
 
     public boolean isEmptyPath() {
         return !path;
@@ -36,5 +40,7 @@ public class AudioHandler {
             System.out.println(e.getMessage());
         }
     }
+
+
 
 }

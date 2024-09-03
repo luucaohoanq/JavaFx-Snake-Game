@@ -1,7 +1,7 @@
 package com.lcaohoanq.fxsnakegame.controllers;
 
 import com.lcaohoanq.fxsnakegame.constants.ResourcePaths;
-import com.lcaohoanq.fxsnakegame.enums.Hover;
+import com.lcaohoanq.fxsnakegame.enums.HoverElement;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,10 +11,10 @@ import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
 import javax.swing.JButton;
-import com.lcaohoanq.fxsnakegame.modules.sound.AudioHandler;
+import com.lcaohoanq.fxsnakegame.utils.AudioUtils;
 import com.lcaohoanq.fxsnakegame.styles.UIHovers;
 import com.lcaohoanq.fxsnakegame.views.MenuView;
-import com.lcaohoanq.fxsnakegame.views.UIPrompts;
+import com.lcaohoanq.fxsnakegame.views.utils.UIPrompts;
 import com.lcaohoanq.fxsnakegame.views.base.AppComponent;
 import com.lcaohoanq.fxsnakegame.views.game.Snake;
 
@@ -23,7 +23,7 @@ public class MenuController implements MouseListener, ActionListener {
     public static MenuView menuView;
     public static MenuView.MenuModern menuModern;
     private boolean isMenuModern = true;
-    private final AudioHandler audioHandler;
+    private final AudioUtils audioUtils;
     private UIHovers<MenuView> uiHovers;
 
     private final List<JButton> jButtonList;
@@ -31,7 +31,7 @@ public class MenuController implements MouseListener, ActionListener {
 
     public MenuController(MenuView menuView) {
         MenuController.menuView = menuView;
-        this.audioHandler = new AudioHandler();
+        this.audioUtils = new AudioUtils();
         this.jButtonList = Arrays.asList(
             menuView.jButton_Mode_Classic,
             menuView.jButton_Mode_Modern,
@@ -89,9 +89,9 @@ public class MenuController implements MouseListener, ActionListener {
                 .filter(button -> e.getSource() == button)
                 .forEach(button -> {
                     if (menuView.getStatusToggle()) {
-                        uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "dark", button);
+                        uiHovers.setHoverButton(HoverElement.ENABLE.isStatus(), "dark", button);
                     } else {
-                        uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "light", button);
+                        uiHovers.setHoverButton(HoverElement.ENABLE.isStatus(), "light", button);
                     }
                 });
         }
@@ -105,9 +105,9 @@ public class MenuController implements MouseListener, ActionListener {
                 .filter(button -> e.getSource() == button)
                 .forEach(button -> {
                     if (menuView.getStatusToggle()) {
-                        uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "dark", button);
+                        uiHovers.setHoverButton(HoverElement.DISABLE.isStatus(), "dark", button);
                     } else {
-                        uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "light", button);
+                        uiHovers.setHoverButton(HoverElement.DISABLE.isStatus(), "light", button);
                     }
                 });
         }
@@ -119,25 +119,25 @@ public class MenuController implements MouseListener, ActionListener {
             System.out.println("user click Off sound");
             menuView.setAudio(false);
         } else if (e.getActionCommand().equals("On")) {
-            menuView.setAudio(Hover.ENABLE.isStatus());
+            menuView.setAudio(HoverElement.ENABLE.isStatus());
         }
     }
 
     private void prepareUnsupportFeature() {
         InputStream unsupported = getClass().getResourceAsStream(ResourcePaths.URL_EATING);
-        audioHandler.playAudio(unsupported);
+        audioUtils.playAudio(unsupported);
         UIPrompts.IS_NOT_SUPPORT();
     }
 
     public static class MenuModernController extends AppComponent implements MouseListener {
 
         private final MenuView.MenuModern menuModern;
-        private final AudioHandler audioHandler;
+        private final AudioUtils audioUtils;
         private UIHovers<MenuView.MenuModern> uiHovers;
 
         public MenuModernController(MenuView.MenuModern menuModern) {
             this.menuModern = menuModern;
-            this.audioHandler = new AudioHandler();
+            this.audioUtils = new AudioUtils();
             this.uiHovers = new UIHovers<>(menuModern);
         }
 
@@ -195,41 +195,41 @@ public class MenuController implements MouseListener, ActionListener {
         public void mouseEntered(MouseEvent e) {
             if (menuModern.getStatusToggle()) {
                 if (e.getSource() == menuModern.getJButton_NoMaze()) {
-                    uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "dark", menuModern.getJButton_NoMaze());
+                    uiHovers.setHoverButton(HoverElement.ENABLE.isStatus(), "dark", menuModern.getJButton_NoMaze());
                 }
                 if (e.getSource() == menuModern.getJButton_Box()) {
-                    uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "dark", menuModern.getJButton_Box());
+                    uiHovers.setHoverButton(HoverElement.ENABLE.isStatus(), "dark", menuModern.getJButton_Box());
                 }
                 if (e.getSource() == menuModern.getJButton_Tunnel()) {
-                    uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "dark", menuModern.getJButton_Tunnel());
+                    uiHovers.setHoverButton(HoverElement.ENABLE.isStatus(), "dark", menuModern.getJButton_Tunnel());
                 }
                 if (e.getSource() == menuModern.getJButton_Mill()) {
-                    uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "dark", menuModern.getJButton_Mill());
+                    uiHovers.setHoverButton(HoverElement.ENABLE.isStatus(), "dark", menuModern.getJButton_Mill());
                 }
                 if (e.getSource() == menuModern.getJButton_Rails()) {
-                    uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "dark", menuModern.getJButton_Rails());
+                    uiHovers.setHoverButton(HoverElement.ENABLE.isStatus(), "dark", menuModern.getJButton_Rails());
                 }
                 if (e.getSource() == menuModern.getJButton_Apartment()) {
-                    uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "dark", menuModern.getJButton_Apartment());
+                    uiHovers.setHoverButton(HoverElement.ENABLE.isStatus(), "dark", menuModern.getJButton_Apartment());
                 }
             } else {
                 if (e.getSource() == menuModern.getJButton_NoMaze()) {
-                    uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "light", menuModern.getJButton_NoMaze());
+                    uiHovers.setHoverButton(HoverElement.ENABLE.isStatus(), "light", menuModern.getJButton_NoMaze());
                 }
                 if (e.getSource() == menuModern.getJButton_Box()) {
-                    uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "light", menuModern.getJButton_Box());
+                    uiHovers.setHoverButton(HoverElement.ENABLE.isStatus(), "light", menuModern.getJButton_Box());
                 }
                 if (e.getSource() == menuModern.getJButton_Tunnel()) {
-                    uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "light", menuModern.getJButton_Tunnel());
+                    uiHovers.setHoverButton(HoverElement.ENABLE.isStatus(), "light", menuModern.getJButton_Tunnel());
                 }
                 if (e.getSource() == menuModern.getJButton_Mill()) {
-                    uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "light", menuModern.getJButton_Mill());
+                    uiHovers.setHoverButton(HoverElement.ENABLE.isStatus(), "light", menuModern.getJButton_Mill());
                 }
                 if (e.getSource() == menuModern.getJButton_Rails()) {
-                    uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "light", menuModern.getJButton_Rails());
+                    uiHovers.setHoverButton(HoverElement.ENABLE.isStatus(), "light", menuModern.getJButton_Rails());
                 }
                 if (e.getSource() == menuModern.getJButton_Apartment()) {
-                    uiHovers.setHoverButton(Hover.ENABLE.isStatus(), "light", menuModern.getJButton_Apartment());
+                    uiHovers.setHoverButton(HoverElement.ENABLE.isStatus(), "light", menuModern.getJButton_Apartment());
                 }
             }
         }
@@ -238,48 +238,48 @@ public class MenuController implements MouseListener, ActionListener {
         public void mouseExited(MouseEvent e) {
             if (menuModern.getStatusToggle()) {
                 if (e.getSource() == menuModern.getJButton_NoMaze()) {
-                    uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "dark", menuModern.getJButton_NoMaze());
+                    uiHovers.setHoverButton(HoverElement.DISABLE.isStatus(), "dark", menuModern.getJButton_NoMaze());
                 }
                 if (e.getSource() == menuModern.getJButton_Box()) {
-                    uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "dark", menuModern.getJButton_Box());
+                    uiHovers.setHoverButton(HoverElement.DISABLE.isStatus(), "dark", menuModern.getJButton_Box());
                 }
                 if (e.getSource() == menuModern.getJButton_Tunnel()) {
-                    uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "dark", menuModern.getJButton_Tunnel());
+                    uiHovers.setHoverButton(HoverElement.DISABLE.isStatus(), "dark", menuModern.getJButton_Tunnel());
                 }
                 if (e.getSource() == menuModern.getJButton_Mill()) {
-                    uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "dark", menuModern.getJButton_Mill());
+                    uiHovers.setHoverButton(HoverElement.DISABLE.isStatus(), "dark", menuModern.getJButton_Mill());
                 }
                 if (e.getSource() == menuModern.getJButton_Rails()) {
-                    uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "dark", menuModern.getJButton_Rails());
+                    uiHovers.setHoverButton(HoverElement.DISABLE.isStatus(), "dark", menuModern.getJButton_Rails());
                 }
                 if (e.getSource() == menuModern.getJButton_Apartment()) {
-                    uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "dark", menuModern.getJButton_Apartment());
+                    uiHovers.setHoverButton(HoverElement.DISABLE.isStatus(), "dark", menuModern.getJButton_Apartment());
                 }
             } else {
                 if (e.getSource() == menuModern.getJButton_NoMaze()) {
-                    uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "light", menuModern.getJButton_NoMaze());
+                    uiHovers.setHoverButton(HoverElement.DISABLE.isStatus(), "light", menuModern.getJButton_NoMaze());
                 }
                 if (e.getSource() == menuModern.getJButton_Box()) {
-                    uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "light", menuModern.getJButton_Box());
+                    uiHovers.setHoverButton(HoverElement.DISABLE.isStatus(), "light", menuModern.getJButton_Box());
                 }
                 if (e.getSource() == menuModern.getJButton_Tunnel()) {
-                    uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "light", menuModern.getJButton_Tunnel());
+                    uiHovers.setHoverButton(HoverElement.DISABLE.isStatus(), "light", menuModern.getJButton_Tunnel());
                 }
                 if (e.getSource() == menuModern.getJButton_Mill()) {
-                    uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "light", menuModern.getJButton_Mill());
+                    uiHovers.setHoverButton(HoverElement.DISABLE.isStatus(), "light", menuModern.getJButton_Mill());
                 }
                 if (e.getSource() == menuModern.getJButton_Rails()) {
-                    uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "light", menuModern.getJButton_Rails());
+                    uiHovers.setHoverButton(HoverElement.DISABLE.isStatus(), "light", menuModern.getJButton_Rails());
                 }
                 if (e.getSource() == menuModern.getJButton_Apartment()) {
-                    uiHovers.setHoverButton(Hover.DISABLE.isStatus(), "light", menuModern.getJButton_Apartment());
+                    uiHovers.setHoverButton(HoverElement.DISABLE.isStatus(), "light", menuModern.getJButton_Apartment());
                 }
             }
         }
 
         private void prepareUnsupportFeature() {
             InputStream unsupported = getClass().getResourceAsStream(ResourcePaths.URL_EATING);
-            audioHandler.playAudio(unsupported);
+            audioUtils.playAudio(unsupported);
             UIPrompts.IS_NOT_SUPPORT();
         }
 

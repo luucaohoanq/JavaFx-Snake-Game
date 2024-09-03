@@ -2,6 +2,7 @@ package com.lcaohoanq.fxsnakegame.views;
 
 import com.lcaohoanq.fxsnakegame.controllers.RegisterController;
 import com.lcaohoanq.fxsnakegame.controllers.ToggleHandler;
+import com.lcaohoanq.fxsnakegame.views.utils.UIPrompts;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import javax.swing.BoxLayout;
@@ -10,7 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import lombok.Getter;
 import com.lcaohoanq.fxsnakegame.models.RegisterModel;
-import com.lcaohoanq.fxsnakegame.modules.user.UserDTO;
+import com.lcaohoanq.fxsnakegame.dtos.UserDTO;
 import com.lcaohoanq.fxsnakegame.styles.UIBorders;
 import com.lcaohoanq.fxsnakegame.styles.UIColors;
 import com.lcaohoanq.fxsnakegame.styles.UIFonts;
