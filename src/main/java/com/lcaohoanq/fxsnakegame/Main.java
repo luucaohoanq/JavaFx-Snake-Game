@@ -1,5 +1,7 @@
 package com.lcaohoanq.fxsnakegame;
 
+import com.lcaohoanq.fxsnakegame.constants.ResourcePaths;
+import com.lcaohoanq.fxsnakegame.utils.AudioUtils;
 import com.lcaohoanq.fxsnakegame.utils.LogsUtils;
 import java.io.IOException;
 import javafx.application.Application;
@@ -23,8 +25,8 @@ public class Main extends Application {
 
         LogsUtils.ensureLogsFolderExists();
 
-//        AudioUtils.getInstance().playAudio(Main.class.getResourceAsStream(
-//            ResourcePaths.URL_INTRO));
+        AudioUtils.getInstance().playAudio(Main.class.getResourceAsStream(
+            ResourcePaths.URL_INTRO));
 
         launch();
     }

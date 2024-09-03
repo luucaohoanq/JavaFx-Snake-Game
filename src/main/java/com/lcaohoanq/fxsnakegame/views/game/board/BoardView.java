@@ -282,7 +282,7 @@ public abstract class BoardView extends BoardComponent implements ActionListener
     }
 
     protected boolean isOnSound() {
-        System.out.println("check is On Sound: " + !audioUtils.isEmptyPath());
+        log.debug("check is On Sound: {}", !audioUtils.isEmptyPath());
         return !audioUtils.isEmptyPath();
     }
 

@@ -1,6 +1,5 @@
 package com.lcaohoanq.fxsnakegame.utils;
 
-import com.lcaohoanq.fxsnakegame.constants.Regex;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
@@ -21,7 +20,7 @@ public class PBKDF2 {
 
     private static final int SIZE = 128;
 
-    private static final Pattern layout = Pattern.compile(Regex.HASHED_PASSWORD);
+    private static final Pattern layout = Pattern.compile("\\$31\\$(\\d\\d?)\\$(.{43})");
 
     private final SecureRandom random;
 

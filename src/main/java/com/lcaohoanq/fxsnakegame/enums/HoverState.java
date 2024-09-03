@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public enum HoverElement {
+public enum HoverState {
 
     ENABLE(true),
     DISABLE(false);
