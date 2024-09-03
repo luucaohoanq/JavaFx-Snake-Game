@@ -31,12 +31,8 @@ module com.lcaohoanq.fxsnakegame {
     opens com.lcaohoanq.fxsnakegame.views.menu to javafx.fxml;
     exports com.lcaohoanq.fxsnakegame.views.info;
     opens com.lcaohoanq.fxsnakegame.views.info to javafx.fxml;
-    exports com.lcaohoanq.fxsnakegame.views.otp;
-    opens com.lcaohoanq.fxsnakegame.views.otp to javafx.fxml;
+    exports com.lcaohoanq.fxsnakegame.views.otpverification;
+    opens com.lcaohoanq.fxsnakegame.views.otpverification to javafx.fxml;
     opens com.lcaohoanq.fxsnakegame.views.score to javafx.fxml;
     exports com.lcaohoanq.fxsnakegame.views.score;
-    opens com.lcaohoanq.fxsnakegame.views.login to javafx.fxml;
-    exports com.lcaohoanq.fxsnakegame.views.login;
-    exports com.lcaohoanq.fxsnakegame.views.register;
-    opens com.lcaohoanq.fxsnakegame.views.register to javafx.fxml;
 }

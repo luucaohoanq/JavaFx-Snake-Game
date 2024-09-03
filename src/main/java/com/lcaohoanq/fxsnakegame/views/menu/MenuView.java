@@ -1,14 +1,12 @@
 package com.lcaohoanq.fxsnakegame.views.menu;
 
 import com.lcaohoanq.fxsnakegame.controllers.MenuController;
-import com.lcaohoanq.fxsnakegame.controllers.ToggleHandler;
 import com.lcaohoanq.fxsnakegame.utils.AudioUtils;
 import com.lcaohoanq.fxsnakegame.styles.UIBorders;
 import com.lcaohoanq.fxsnakegame.styles.UIColors;
 import com.lcaohoanq.fxsnakegame.styles.UIHovers;
 import com.lcaohoanq.fxsnakegame.styles.UIImages;
 import com.lcaohoanq.fxsnakegame.styles.UISizes;
-import com.lcaohoanq.fxsnakegame.views.login.SwingLoginView;
 import com.lcaohoanq.fxsnakegame.views.base.AppComponent;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -21,7 +19,8 @@ import javax.swing.JMenuBar;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public class MenuView extends AppComponent implements ToggleHandler {
+public class MenuView extends AppComponent {
+
     private final UIHovers<MenuView> uiHovers;
     private final AudioUtils audioUtils;
 
@@ -79,30 +78,17 @@ public class MenuView extends AppComponent implements ToggleHandler {
         add(jPanel_Container_MenuView);
     }
 
-    @Override
+
     public void changeColorBaseOnToggle() {
-        //if toggle is on, change color to dark
-        if (getStatusToggle()) {
-            jLabel_Title_MenuView.setForeground(UIColors.TEXT_COLOR_D);
-            jButton_Mode_Classic.setBackground(UIColors.TEXT_COLOR_D);
-            jButton_Mode_Classic.setForeground(UIColors.PRIMARY_COLOR_D);
-            jButton_Mode_Modern.setBackground(UIColors.TEXT_COLOR_D);
-            jButton_Mode_Modern.setForeground(UIColors.PRIMARY_COLOR_D);
-            jButton_Mode_Campaign.setBackground(UIColors.TEXT_COLOR_D);
-            jButton_Mode_Campaign.setForeground(UIColors.PRIMARY_COLOR_D);
-            jPanel_Button_MenuView.setBackground(UIColors.PRIMARY_COLOR_D);
-            jPanel_Container_MenuView.setBackground(UIColors.PRIMARY_COLOR_D);
-        } else {
-            jLabel_Title_MenuView.setForeground(UIColors.TEXT_COLOR_L);
-            jButton_Mode_Classic.setBackground(UIColors.TEXT_COLOR_L);
-            jButton_Mode_Classic.setForeground(UIColors.PRIMARY_COLOR_L);
-            jButton_Mode_Modern.setBackground(UIColors.TEXT_COLOR_L);
-            jButton_Mode_Modern.setForeground(UIColors.PRIMARY_COLOR_L);
-            jButton_Mode_Campaign.setBackground(UIColors.TEXT_COLOR_L);
-            jButton_Mode_Campaign.setForeground(UIColors.PRIMARY_COLOR_L);
-            jPanel_Button_MenuView.setBackground(UIColors.PRIMARY_COLOR_L);
-            jPanel_Container_MenuView.setBackground(UIColors.PRIMARY_COLOR_L);
-        }
+        jLabel_Title_MenuView.setForeground(UIColors.TEXT_COLOR_L);
+        jButton_Mode_Classic.setBackground(UIColors.TEXT_COLOR_L);
+        jButton_Mode_Classic.setForeground(UIColors.PRIMARY_COLOR_L);
+        jButton_Mode_Modern.setBackground(UIColors.TEXT_COLOR_L);
+        jButton_Mode_Modern.setForeground(UIColors.PRIMARY_COLOR_L);
+        jButton_Mode_Campaign.setBackground(UIColors.TEXT_COLOR_L);
+        jButton_Mode_Campaign.setForeground(UIColors.PRIMARY_COLOR_L);
+        jPanel_Button_MenuView.setBackground(UIColors.PRIMARY_COLOR_L);
+        jPanel_Container_MenuView.setBackground(UIColors.PRIMARY_COLOR_L);
     }
 
     @Override
@@ -128,7 +114,7 @@ public class MenuView extends AppComponent implements ToggleHandler {
         }
     }
 
-    public class MenuModern extends AppComponent implements ActionListener, ToggleHandler {
+    public class MenuModern extends AppComponent implements ActionListener {
 
         public MenuModern() {
             setTitle("Modern Menu");
@@ -197,66 +183,43 @@ public class MenuView extends AppComponent implements ToggleHandler {
             }
         }
 
-        @Override
+
         public void changeColorBaseOnToggle() {
-            if (MenuView.this.getStatusToggle()) {
-                jLabel_Title_Modern.setBackground(UIColors.PRIMARY_COLOR_D);
-                jLabel_Title_Modern.setForeground(UIColors.TEXT_COLOR_D);
-                jButton_NoMaze.setBackground(UIColors.TEXT_COLOR_D);
-                jButton_NoMaze.setForeground(UIColors.PRIMARY_COLOR_D);
-                jButton_Box.setBackground(UIColors.TEXT_COLOR_D);
-                jButton_Box.setForeground(UIColors.PRIMARY_COLOR_D);
-                jButton_Tunnel.setBackground(UIColors.TEXT_COLOR_D);
-                jButton_Tunnel.setForeground(UIColors.PRIMARY_COLOR_D);
-                jButton_Mill.setBackground(UIColors.TEXT_COLOR_D);
-                jButton_Mill.setForeground(UIColors.PRIMARY_COLOR_D);
-                jButton_Rails.setBackground(UIColors.TEXT_COLOR_D);
-                jButton_Rails.setForeground(UIColors.PRIMARY_COLOR_D);
-                jButton_Apartment.setBackground(UIColors.TEXT_COLOR_D);
-                jButton_Apartment.setForeground(UIColors.PRIMARY_COLOR_D);
-                jPanel_Menu_Modern.setBackground(UIColors.PRIMARY_COLOR_D);
-                jPanel_Container_MenuModern.setBackground(UIColors.PRIMARY_COLOR_D);
-            } else {
-                jLabel_Title_Modern.setBackground(UIColors.PRIMARY_COLOR_L);
-                jLabel_Title_Modern.setForeground(UIColors.TEXT_COLOR_L);
-                jButton_NoMaze.setBackground(UIColors.TEXT_COLOR_L);
-                jButton_NoMaze.setForeground(UIColors.PRIMARY_COLOR_L);
-                jButton_Box.setBackground(UIColors.TEXT_COLOR_L);
-                jButton_Box.setForeground(UIColors.PRIMARY_COLOR_L);
-                jButton_Tunnel.setBackground(UIColors.TEXT_COLOR_L);
-                jButton_Tunnel.setForeground(UIColors.PRIMARY_COLOR_L);
-                jButton_Mill.setBackground(UIColors.TEXT_COLOR_L);
-                jButton_Mill.setForeground(UIColors.PRIMARY_COLOR_L);
-                jButton_Rails.setBackground(UIColors.TEXT_COLOR_L);
-                jButton_Rails.setForeground(UIColors.PRIMARY_COLOR_L);
-                jButton_Apartment.setBackground(UIColors.TEXT_COLOR_L);
-                jButton_Apartment.setForeground(UIColors.PRIMARY_COLOR_L);
-                jPanel_Menu_Modern.setBackground(UIColors.PRIMARY_COLOR_L);
-                jPanel_Container_MenuModern.setBackground(UIColors.PRIMARY_COLOR_L);
-            }
+            jLabel_Title_Modern.setBackground(UIColors.PRIMARY_COLOR_L);
+            jLabel_Title_Modern.setForeground(UIColors.TEXT_COLOR_L);
+            jButton_NoMaze.setBackground(UIColors.TEXT_COLOR_L);
+            jButton_NoMaze.setForeground(UIColors.PRIMARY_COLOR_L);
+            jButton_Box.setBackground(UIColors.TEXT_COLOR_L);
+            jButton_Box.setForeground(UIColors.PRIMARY_COLOR_L);
+            jButton_Tunnel.setBackground(UIColors.TEXT_COLOR_L);
+            jButton_Tunnel.setForeground(UIColors.PRIMARY_COLOR_L);
+            jButton_Mill.setBackground(UIColors.TEXT_COLOR_L);
+            jButton_Mill.setForeground(UIColors.PRIMARY_COLOR_L);
+            jButton_Rails.setBackground(UIColors.TEXT_COLOR_L);
+            jButton_Rails.setForeground(UIColors.PRIMARY_COLOR_L);
+            jButton_Apartment.setBackground(UIColors.TEXT_COLOR_L);
+            jButton_Apartment.setForeground(UIColors.PRIMARY_COLOR_L);
+            jPanel_Menu_Modern.setBackground(UIColors.PRIMARY_COLOR_L);
+            jPanel_Container_MenuModern.setBackground(UIColors.PRIMARY_COLOR_L);
         }
     }
 
     private class BackToMainMenu implements ActionListener {
+
         @Override
         public void actionPerformed(ActionEvent e) {
             EventQueue.invokeLater(() -> {
                 dispose();
                 System.out.println("Back to main menu");
-                toggleButton.setSelected(false);
-                new SwingLoginView().setVisible(true);
             });
         }
     }
 
-    private class LogOut implements ActionListener{
+    private class LogOut implements ActionListener {
+
         @Override
         public void actionPerformed(ActionEvent e) {
-            EventQueue.invokeLater(() -> {
-                dispose();
-                toggleButton.setSelected(false);
-                new SwingLoginView().setVisible(true);
-            });
+            EventQueue.invokeLater(MenuView.this::dispose);
         }
     }
 }

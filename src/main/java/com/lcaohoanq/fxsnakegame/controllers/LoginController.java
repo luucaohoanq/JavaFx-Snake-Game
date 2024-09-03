@@ -5,7 +5,7 @@ import com.lcaohoanq.fxsnakegame.exceptions.BadCredentialsException;
 import com.lcaohoanq.fxsnakegame.utils.ApiUtils;
 import com.lcaohoanq.fxsnakegame.utils.EnvUtils;
 import com.lcaohoanq.fxsnakegame.views.menu.MenuView;
-import com.lcaohoanq.fxsnakegame.views.utils.UIPrompts;
+import com.lcaohoanq.fxsnakegame.views.utils.AppAlert;
 import com.lcaohoanq.fxsnakegame.views.base.AppFxBaseResources;
 import java.net.http.HttpResponse;
 import java.util.Map;
@@ -63,7 +63,7 @@ public class LoginController extends AppFxBaseResources {
 //            loginMessageLabel.setText("You tried to login");
             validateLogin();
         } else {
-            UIPrompts.IS_EMPTY_FIELD();
+            AppAlert.IS_EMPTY_FIELD("Empty Fields", "Please fill in all fields", null);
         }
     }
 
@@ -71,7 +71,7 @@ public class LoginController extends AppFxBaseResources {
         email = usernameTextField.getText();
         password = enterPasswordField.getText();
         if (email.equals("admin") && password.equals("admin")) {
-            UIPrompts.IS_LOGIN_SUCCESS();
+            AppAlert.IS_LOGIN_SUCCESS();
             Platform.runLater(() -> {
                 new MenuView().setVisible(true);
                 Stage stage = (Stage) loginButton.getScene().getWindow();
@@ -101,7 +101,7 @@ public class LoginController extends AppFxBaseResources {
                 // Handle the response
                 switch (response.statusCode()) {
                     case 200:
-                        UIPrompts.IS_LOGIN_SUCCESS();
+                        AppAlert.IS_LOGIN_SUCCESS();
 
                         Platform.runLater(() -> {
                             new MenuView().setVisible(true);
@@ -143,7 +143,7 @@ public class LoginController extends AppFxBaseResources {
 
     @FXML
     private void loginViaFacebookAction() {
-        Platform.runLater(() -> UIPrompts.IS_NOT_SUPPORT());
+        Platform.runLater(AppAlert::IS_NOT_SUPPORT);
     }
 
     public void signupHereAction(ActionEvent actionEvent) {

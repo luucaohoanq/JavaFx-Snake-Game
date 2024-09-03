@@ -1,6 +1,5 @@
-package com.lcaohoanq.fxsnakegame.views.otp;
+package com.lcaohoanq.fxsnakegame.views.otpverification;
 
-import com.lcaohoanq.fxsnakegame.controllers.OTPVerificationListener;
 import com.lcaohoanq.fxsnakegame.styles.UIColors;
 import com.lcaohoanq.fxsnakegame.styles.UIFonts;
 import java.awt.Cursor;
@@ -27,7 +26,7 @@ public class OTPVerificationView extends JFrame implements ActionListener {
     private JButton resendButton;
     private final Cursor cursor = new Cursor(Cursor.HAND_CURSOR);
     private JPanel topPanel, midPanel, bottomPanel;
-    private OTPVerificationListener listener;
+    private IOTPVerification listener;
     private int incorrectOtpAttempts = 0;
     private int resendAttempts = 0;
     private String generatedOtp;
@@ -36,7 +35,7 @@ public class OTPVerificationView extends JFrame implements ActionListener {
     private final Instant otpGeneratedTime = Instant.now();
     private Instant lastResendTime = Instant.now();
 
-    public OTPVerificationView(String generatedOtp, OTPVerificationListener listener) {
+    public OTPVerificationView(String generatedOtp, IOTPVerification listener) {
         this.generatedOtp = generatedOtp;
         this.listener = listener;
         setTitle("OTP Verification");

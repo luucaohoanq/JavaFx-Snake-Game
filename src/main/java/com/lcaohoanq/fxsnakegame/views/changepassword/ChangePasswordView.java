@@ -1,20 +1,13 @@
 package com.lcaohoanq.fxsnakegame.views.changepassword;
 
-import com.lcaohoanq.fxsnakegame.constants.APIConstants;
-import com.lcaohoanq.fxsnakegame.models.RegisterModel;
 import com.lcaohoanq.fxsnakegame.styles.UIBorders;
 import com.lcaohoanq.fxsnakegame.styles.UIColors;
 import com.lcaohoanq.fxsnakegame.styles.UIFonts;
-import com.lcaohoanq.fxsnakegame.utils.ApiUtils;
-import com.lcaohoanq.fxsnakegame.views.utils.UIPrompts;
 import java.awt.Cursor;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.net.http.HttpResponse;
-import java.util.Map;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -91,50 +84,50 @@ public class ChangePasswordView extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == submitButton) {
-
-            String newPassword = String.valueOf(newPasswordField.getPassword());
-            String confirmNewPassword = String.valueOf(confirmNewPasswordField.getPassword());
-
-            if (newPassword.isEmpty() || confirmNewPassword.isEmpty()) {
-                UIPrompts.IS_EMPTY_FIELD();
-            } else {
-                if (newPassword.equals(confirmNewPassword)) {
-                    if (new RegisterModel().isPasswordFormat(newPassword)) {
-                        // update password in database
-//                        UserDAO.getInstance().updatePassword(email, new PBKDF2().hash(newPassword.toCharArray()));
-
-                        String endPoint = APIConstants.BASE_URL + "/users/updatePassword";
-
-                        Map<String, String> payload = Map.of(
-                            "identifier", email,
-                            "newPassword", newPassword
-                        );
-
-                        try {
-                            HttpResponse<String> response = ApiUtils.putRequest(endPoint, payload);
-                            switch (response.statusCode()) {
-                                case 200:
-                                    UIPrompts.IS_CHANGE_PASSWORD_SUCCESS();
-                                    log.info("Updated password for user: {}", email);
-                                    break;
-                                case 400:
-                                    UIPrompts.IS_WRONG_FORMAT_PASSWORD();
-                                    break;
-                                default:
-                                    break;
-                            }
-                        } catch (IOException | InterruptedException ex) {
-                            throw new RuntimeException(ex);
-                        }
-                    } else {
-                        UIPrompts.IS_WRONG_FORMAT_PASSWORD();
-                    }
-                } else {
-                    UIPrompts.IS_NOT_MATCH_PASSWORD_AND_CONFIRM_PASSWORD();
-                }
-            }
-        }
+//        if (e.getSource() == submitButton) {
+//
+//            String newPassword = String.valueOf(newPasswordField.getPassword());
+//            String confirmNewPassword = String.valueOf(confirmNewPasswordField.getPassword());
+//
+//            if (newPassword.isEmpty() || confirmNewPassword.isEmpty()) {
+//                UIPrompts.IS_EMPTY_FIELD();
+//            } else {
+//                if (newPassword.equals(confirmNewPassword)) {
+//                    if (new RegisterModel().isPasswordFormat(newPassword)) {
+//                        // update password in database
+////                        UserDAO.getInstance().updatePassword(email, new PBKDF2().hash(newPassword.toCharArray()));
+//
+//                        String endPoint = APIConstants.BASE_URL + "/users/updatePassword";
+//
+//                        Map<String, String> payload = Map.of(
+//                            "identifier", email,
+//                            "newPassword", newPassword
+//                        );
+//
+//                        try {
+//                            HttpResponse<String> response = ApiUtils.putRequest(endPoint, payload);
+//                            switch (response.statusCode()) {
+//                                case 200:
+//                                    UIPrompts.IS_CHANGE_PASSWORD_SUCCESS();
+//                                    log.info("Updated password for user: {}", email);
+//                                    break;
+//                                case 400:
+//                                    UIPrompts.IS_WRONG_FORMAT_PASSWORD();
+//                                    break;
+//                                default:
+//                                    break;
+//                            }
+//                        } catch (IOException | InterruptedException ex) {
+//                            throw new RuntimeException(ex);
+//                        }
+//                    } else {
+//                        UIPrompts.IS_WRONG_FORMAT_PASSWORD();
+//                    }
+//                } else {
+//                    UIPrompts.IS_NOT_MATCH_PASSWORD_AND_CONFIRM_PASSWORD();
+//                }
+//            }
+//        }
     }
 
 }

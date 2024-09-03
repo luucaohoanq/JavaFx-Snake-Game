@@ -6,7 +6,7 @@ import com.lcaohoanq.fxsnakegame.styles.UIFonts;
 import com.lcaohoanq.fxsnakegame.styles.UILabels;
 import com.lcaohoanq.fxsnakegame.styles.UISizes;
 import com.lcaohoanq.fxsnakegame.views.menu.MenuView;
-import com.lcaohoanq.fxsnakegame.views.utils.UIPrompts;
+import com.lcaohoanq.fxsnakegame.views.utils.AppAlert;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -101,7 +101,7 @@ public class BoardComponent extends JPanel {
         exitButton.setBackground(UIColors.PROGRESS_BAR_LOADING);
         exitButton.setForeground(UIColors.PRIMARY_COLOR_L);
         exitButton.addActionListener(e -> {
-            if (UIPrompts.IS_CONFIRM_EXIT() == JOptionPane.YES_OPTION) {
+            if (AppAlert.IS_CONFIRM_EXIT() == JOptionPane.YES_OPTION) {
                 SwingUtilities.getWindowAncestor(this).dispose();
             }
         });

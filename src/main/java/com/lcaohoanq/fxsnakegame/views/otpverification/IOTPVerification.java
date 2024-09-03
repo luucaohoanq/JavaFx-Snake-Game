@@ -1,8 +1,8 @@
-package com.lcaohoanq.fxsnakegame.controllers;
+package com.lcaohoanq.fxsnakegame.views.otpverification;
 
 import java.io.IOException;
 
-public interface OTPVerificationListener  {
+public interface IOTPVerification {
 
     void onOtpVerified();
 

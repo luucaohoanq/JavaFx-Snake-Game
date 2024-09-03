@@ -4,20 +4,16 @@ import java.awt.Desktop;
 import java.awt.event.ActionListener;
 import java.net.URI;
 import lombok.extern.slf4j.Slf4j;
-import com.lcaohoanq.fxsnakegame.views.login.SwingLoginView;
-import com.lcaohoanq.fxsnakegame.views.otp.OTPVerificationView;
+import com.lcaohoanq.fxsnakegame.views.otpverification.OTPVerificationView;
 
 @Slf4j
 public class ForgotPasswordController implements ActionListener {
 
-    private final SwingLoginView loginView;
 
     @Deprecated
     private OTPVerificationView otpVerificationView;
 
-    public ForgotPasswordController(SwingLoginView loginView, OTPVerificationView otpVerificationView) {
-        this.loginView = loginView;
-        this.otpVerificationView = otpVerificationView;
+    public ForgotPasswordController() {
     }
 
     @Override

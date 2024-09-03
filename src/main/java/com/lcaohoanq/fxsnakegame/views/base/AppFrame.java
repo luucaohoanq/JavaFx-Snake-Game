@@ -1,8 +1,14 @@
 package com.lcaohoanq.fxsnakegame.views.base;
 
-import com.lcaohoanq.fxsnakegame.views.info.InfoView;
 import com.lcaohoanq.fxsnakegame.controllers.ScoreController;
-import com.lcaohoanq.fxsnakegame.controllers.ToggleHandler;
+import com.lcaohoanq.fxsnakegame.styles.UIBorders;
+import com.lcaohoanq.fxsnakegame.styles.UIColors;
+import com.lcaohoanq.fxsnakegame.styles.UIImages;
+import com.lcaohoanq.fxsnakegame.styles.UILabels;
+import com.lcaohoanq.fxsnakegame.styles.UISizes;
+import com.lcaohoanq.fxsnakegame.views.info.InfoView;
+import com.lcaohoanq.fxsnakegame.views.menu.MenuView;
+import com.lcaohoanq.fxsnakegame.views.score.ScoreView;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Desktop;
@@ -14,15 +20,8 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
-import com.lcaohoanq.fxsnakegame.styles.UIBorders;
-import com.lcaohoanq.fxsnakegame.styles.UIColors;
-import com.lcaohoanq.fxsnakegame.styles.UIImages;
-import com.lcaohoanq.fxsnakegame.styles.UILabels;
-import com.lcaohoanq.fxsnakegame.styles.UISizes;
-import com.lcaohoanq.fxsnakegame.views.menu.MenuView;
-import com.lcaohoanq.fxsnakegame.views.score.ScoreView;
 
-public abstract class AppFrame extends AppComponent implements ToggleHandler{
+public abstract class AppFrame extends AppComponent {
 
     public AppFrame() {
         setTitle(UILabels.WINDOW);
@@ -44,7 +43,6 @@ public abstract class AppFrame extends AppComponent implements ToggleHandler{
         initMenu();
         initLeft();
         initRight();
-        initToggle();
         initContainer();
     }
 
@@ -86,15 +84,6 @@ public abstract class AppFrame extends AppComponent implements ToggleHandler{
     public abstract void initRightBottom();
 
     public abstract void initRightPanel();
-
-    protected void initToggle() {
-        toggleButton.addEventSelected(selected -> {
-            Map<JComponent, Color[]> lightMode = createLightModeMap();
-            Map<JComponent, Color[]> darkMode = createDarkModeMap();
-            updateUI(selected ? darkMode : lightMode);
-        });
-        jPanel_Right_Bottom_Option.add(toggleButton, FlowLayout.RIGHT);
-    }
 
     //foreground, background
     private Map<JComponent, Color[]> createLightModeMap() {
