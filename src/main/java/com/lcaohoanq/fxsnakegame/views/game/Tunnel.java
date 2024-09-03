@@ -1,17 +1,14 @@
 package com.lcaohoanq.fxsnakegame.views.game;
 
 import com.lcaohoanq.fxsnakegame.constants.ResourcePaths;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.io.InputStream;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
 import com.lcaohoanq.fxsnakegame.styles.UISizes;
 import com.lcaohoanq.fxsnakegame.views.base.Board;
+import java.awt.Graphics;
+import java.io.InputStream;
+import javax.swing.JFrame;
 
 public class Tunnel extends Board {
     protected int wallThickness = 20;
-    private Image wall;
 
     public Tunnel() {
         super();
@@ -27,38 +24,32 @@ public class Tunnel extends Board {
     }
 
     @Override
-    public void loadImages() {
-        super.loadImages();
-        wall = new ImageIcon(getClass().getResource(ResourcePaths.URL_WALL)).getImage();
-    }
-
-    @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         //draw the 2 left horizontal walls
         for (int i = 0; i < 100; i += 20) {
-            g.drawImage(wall, i, 0, this);
-            g.drawImage(wall, i, UISizes.HEIGHT_BOARD - 70, this);
+            g.drawImage(uiImages.getWall(), i, 0, this);
+            g.drawImage(uiImages.getWall(), i, UISizes.HEIGHT_BOARD - 70, this);
         }
         //draw the 2 right horizontal walls
         for (int i = 400; i < UISizes.WIDTH_BOARD; i += 20) {
-            g.drawImage(wall, i, 0, this);
-            g.drawImage(wall, i, UISizes.HEIGHT_BOARD - 70, this);
+            g.drawImage(uiImages.getWall(), i, 0, this);
+            g.drawImage(uiImages.getWall(), i, UISizes.HEIGHT_BOARD - 70, this);
         }
         //draw the 2 left vertical walls
         for (int i = 0; i < 100; i += 20) {
-            g.drawImage(wall, 0, i, this);
-            g.drawImage(wall, 0, UISizes.HEIGHT_BOARD - 70 - i, this);
+            g.drawImage(uiImages.getWall(), 0, i, this);
+            g.drawImage(uiImages.getWall(), 0, UISizes.HEIGHT_BOARD - 70 - i, this);
         }
         //draw the 2 right vertical walls
         for (int i = 0; i < 100; i += 20) {
-            g.drawImage(wall, UISizes.WIDTH_BOARD - 20, i, this);
-            g.drawImage(wall, UISizes.WIDTH_BOARD - 20, UISizes.HEIGHT_BOARD - 70 - i, this);
+            g.drawImage(uiImages.getWall(), UISizes.WIDTH_BOARD - 20, i, this);
+            g.drawImage(uiImages.getWall(), UISizes.WIDTH_BOARD - 20, UISizes.HEIGHT_BOARD - 70 - i, this);
         }
         //draw the 2 middle horizontal walls
         for (int i = 100; i < 400; i += 20) {
-            g.drawImage(wall, i, 205, this);
-            g.drawImage(wall, i, UISizes.HEIGHT_BOARD - 50 - 100 - 105, this);
+            g.drawImage(uiImages.getWall(), i, 205, this);
+            g.drawImage(uiImages.getWall(), i, UISizes.HEIGHT_BOARD - 50 - 100 - 105, this);
         }
     }
 

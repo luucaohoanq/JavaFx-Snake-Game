@@ -1,25 +1,16 @@
 package com.lcaohoanq.fxsnakegame.views.game;
 
 import com.lcaohoanq.fxsnakegame.constants.ResourcePaths;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.io.InputStream;
-import javax.swing.ImageIcon;
 import com.lcaohoanq.fxsnakegame.styles.UISizes;
 import com.lcaohoanq.fxsnakegame.views.base.Board;
+import java.awt.Graphics;
+import java.io.InputStream;
 
 public class Apartment extends Board {
     protected int wallThickness = 20;
-    private Image wall;
 
     public Apartment(){
         super();
-    }
-
-    @Override
-    public void loadImages() {
-        super.loadImages();
-        wall = new ImageIcon(getClass().getResource(ResourcePaths.URL_WALL)).getImage();
     }
 
     @Override
@@ -27,35 +18,35 @@ public class Apartment extends Board {
         super.paintComponent(g);
         //draw the horizontal walls at y = 0, from x = 0 to x 80
         for (int i = 0; i < 80; i += 20) {
-            g.drawImage(wall, i, 0, this);
+            g.drawImage(uiImages.getWall(), i, 0, this);
         }
         //draw the horizontal walls at y = 120, from x = 160 to x 340
         for (int i = 160; i < UISizes.WIDTH_BOARD - 80; i += 20) {
-            g.drawImage(wall, i, 0, this);
+            g.drawImage(uiImages.getWall(), i, 0, this);
         }
         //draw the vertical walls at x = 0, from y = 0 to y 120
         for (int i = 0; i < 100; i += 20) {
-            g.drawImage(wall, 0, i, this);
+            g.drawImage(uiImages.getWall(), 0, i, this);
         }
         //draw the horizontal walls at y = 140, from x = 0 to x 200
         for (int i = 0; i < 200; i += 20) {
-            g.drawImage(wall, i, 140, this);
+            g.drawImage(uiImages.getWall(), i, 140, this);
         }
         //draw the horizontal walls at y = 140, from x = 300 to max width
         for (int i = 300; i < UISizes.WIDTH_BOARD; i += 20) {
-            g.drawImage(wall, i, 140, this);
+            g.drawImage(uiImages.getWall(), i, 140, this);
         }
         //draw the vertical walls at x = 200, from y = 0 to y 160
         for (int i = 0; i < 160; i += 20) {
-            g.drawImage(wall, 200, i, this);
+            g.drawImage(uiImages.getWall(), 200, i, this);
         }
         //draw the horizontal walls at y = 400, from x = 0 to max width
         for (int i = 0; i < UISizes.WIDTH_BOARD; i += 20) {
-            g.drawImage(wall, i, 260, this);
+            g.drawImage(uiImages.getWall(), i, 260, this);
         }
         //draw the vertical walls at x = 300, from y = 260 to y 500
         for (int i = 260; i < UISizes.HEIGHT_BOARD - 50; i += 20) {
-            g.drawImage(wall, 300, i, this);
+            g.drawImage(uiImages.getWall(), 300, i, this);
         }
     }
     

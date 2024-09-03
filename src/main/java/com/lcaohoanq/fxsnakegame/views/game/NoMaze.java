@@ -12,11 +12,6 @@ public class NoMaze extends Board {
     }
 
     @Override
-    protected void loadImages() {
-        super.loadImages();
-    }
-
-    @Override
     protected void checkCollision() {
 
         for (int z = dots; z > 0; z--) {

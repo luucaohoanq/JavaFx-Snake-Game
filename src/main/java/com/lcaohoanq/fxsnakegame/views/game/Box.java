@@ -1,37 +1,28 @@
 package com.lcaohoanq.fxsnakegame.views.game;
 
 import com.lcaohoanq.fxsnakegame.constants.ResourcePaths;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.io.InputStream;
-import javax.swing.ImageIcon;
 import com.lcaohoanq.fxsnakegame.styles.UISizes;
 import com.lcaohoanq.fxsnakegame.views.base.Board;
+import java.awt.Graphics;
+import java.io.InputStream;
 
 public class Box extends Board {
     protected int wallThickness = 20;
-    private Image wall;
 
     public Box() {
         super();
     }
 
     @Override
-    protected void loadImages() {
-        super.loadImages();
-        wall = new ImageIcon(getClass().getResource(ResourcePaths.URL_WALL)).getImage();
-    }
-
-    @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         for (int i = 0; i < UISizes.WIDTH_BOARD; i += 20) {
-            g.drawImage(wall, i, 0, this);
-            g.drawImage(wall, i, UISizes.HEIGHT_BOARD - 70, this);
+            g.drawImage(uiImages.getWall(), i, 0, this);
+            g.drawImage(uiImages.getWall(), i, UISizes.HEIGHT_BOARD - 70, this);
         }
         for (int i = 0; i < UISizes.HEIGHT_BOARD - 70; i += 20) {
-            g.drawImage(wall, 0, i, this);
-            g.drawImage(wall, UISizes.WIDTH_BOARD - 20, i, this);
+            g.drawImage(uiImages.getWall(), 0, i, this);
+            g.drawImage(uiImages.getWall(), UISizes.WIDTH_BOARD - 20, i, this);
         }
     }
 

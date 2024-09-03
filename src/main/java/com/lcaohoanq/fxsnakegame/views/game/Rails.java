@@ -1,26 +1,17 @@
 package com.lcaohoanq.fxsnakegame.views.game;
 
 import com.lcaohoanq.fxsnakegame.constants.ResourcePaths;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.io.InputStream;
-import javax.swing.ImageIcon;
 import com.lcaohoanq.fxsnakegame.styles.UISizes;
 import com.lcaohoanq.fxsnakegame.views.base.Board;
+import java.awt.Graphics;
+import java.io.InputStream;
 
 public class Rails extends Board {
 
     private final int wallThickness = 20;
-    private Image wall;
 
     public Rails() {
         super();
-    }
-
-    @Override
-    protected void loadImages() {
-        super.loadImages();
-        wall = new ImageIcon(getClass().getResource(ResourcePaths.URL_WALL)).getImage();
     }
 
     @Override
@@ -28,23 +19,23 @@ public class Rails extends Board {
         super.paintComponent(g);
         //draw the top and bottom horizontal walls
         for (int i = 0; i < UISizes.WIDTH_BOARD; i += 20) {
-            g.drawImage(wall, i, 0, this);
-            g.drawImage(wall, i, UISizes.HEIGHT_BOARD - 70, this);
+            g.drawImage(uiImages.getWall(), i, 0, this);
+            g.drawImage(uiImages.getWall(), i, UISizes.HEIGHT_BOARD - 70, this);
         }
         //draw the 2 left vertical walls from y = 0 to y = 200 and from y = 300 to y = 480
         for (int i = 0; i < 200; i += 20) {
-            g.drawImage(wall, 0, i, this);
-            g.drawImage(wall, 0, UISizes.HEIGHT_BOARD - 70 - i, this);
+            g.drawImage(uiImages.getWall(), 0, i, this);
+            g.drawImage(uiImages.getWall(), 0, UISizes.HEIGHT_BOARD - 70 - i, this);
         }
         //draw the 2 right vertical walls from
         for (int i = 0; i < 200; i += 20) {
-            g.drawImage(wall, UISizes.WIDTH_BOARD - 20, i, this);
-            g.drawImage(wall, UISizes.WIDTH_BOARD - 20, UISizes.HEIGHT_BOARD - 70 - i, this);
+            g.drawImage(uiImages.getWall(), UISizes.WIDTH_BOARD - 20, i, this);
+            g.drawImage(uiImages.getWall(), UISizes.WIDTH_BOARD - 20, UISizes.HEIGHT_BOARD - 70 - i, this);
         }
         //draw the 2 middle horizontal walls
         for (int i = 100; i < 400; i += 20) {
-            g.drawImage(wall, i, 140, this);
-            g.drawImage(wall, i, UISizes.HEIGHT_BOARD - 50 - 160, this);
+            g.drawImage(uiImages.getWall(), i, 140, this);
+            g.drawImage(uiImages.getWall(), i, UISizes.HEIGHT_BOARD - 50 - 160, this);
         }
     }
 

@@ -6,6 +6,7 @@ import com.lcaohoanq.fxsnakegame.controllers.LoginController;
 import com.lcaohoanq.fxsnakegame.styles.UIBorders;
 import com.lcaohoanq.fxsnakegame.styles.UIColors;
 import com.lcaohoanq.fxsnakegame.styles.UIFonts;
+import com.lcaohoanq.fxsnakegame.styles.UIImages;
 import com.lcaohoanq.fxsnakegame.styles.UILabels;
 import com.lcaohoanq.fxsnakegame.styles.UISizes;
 import com.lcaohoanq.fxsnakegame.utils.ApiUtils;
@@ -16,7 +17,6 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,8 +24,6 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.InputStream;
 import java.net.http.HttpResponse;
-import java.util.Objects;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -65,10 +63,6 @@ public abstract class Board extends JPanel implements ActionListener {
     // Game state variables
     private int score = 0;            // Player's score
     private Timer bigAppleTimer;               // Timer for big apple appearance
-    private Image ball;                        // Snake body image
-    private Image apple;                       // Regular apple image
-    private Image head;                        // Snake head image
-    private Image bigApple;                    // Big apple image
     // UI components
     private JLabel gameOverLabel;              // Label to display the "Game Over" message
     private JPanel gameOverPanel;              // Panel for UI components at the game over
@@ -83,6 +77,8 @@ public abstract class Board extends JPanel implements ActionListener {
     private final JPanel bottomPanel = new JPanel(); // Panel for UI components at the bottom
     private final JPanel gameOverButtonPanel = new JPanel(); // Panel for UI components at the game over
 
+    protected final UIImages uiImages = new UIImages();
+
     public Board() {
         initBoard();
     }
@@ -95,7 +91,7 @@ public abstract class Board extends JPanel implements ActionListener {
         setPreferredSize(UISizes.SIZE_BOARD);
 
         setLayout(new BorderLayout());
-        loadImages();
+        uiImages.loadImages();
         initGame();
 
         initBottomPanel();
@@ -235,26 +231,6 @@ public abstract class Board extends JPanel implements ActionListener {
         add(gameOverButtonPanel, BorderLayout.CENTER);
     }
 
-    protected void loadImages() {
-
-        try{
-            ball = new ImageIcon(
-                Objects.requireNonNull(getClass().getResource(ResourcePaths.URL_DOT))).getImage();
-
-            apple = new ImageIcon(
-                Objects.requireNonNull(getClass().getResource(ResourcePaths.URL_APPLE))).getImage();
-
-            head = new ImageIcon(
-                Objects.requireNonNull(getClass().getResource(ResourcePaths.URL_HEAD))).getImage();
-
-            bigApple = new ImageIcon(
-                Objects.requireNonNull(getClass().getResource(ResourcePaths.URL_BIG_APPLE))).getImage();
-        }catch (Exception e){
-            System.out.println("Resources at Board not found");
-        }
-
-    }
-
     private void initGame() {
 
         dots = 3;
@@ -280,16 +256,16 @@ public abstract class Board extends JPanel implements ActionListener {
     private void doDrawing(Graphics g) {
         if (inGame) {
             if (apple_count % 5 == 0 && apple_count != 0) {
-                g.drawImage(bigApple, bigApple_x, bigApple_y, this);
+                g.drawImage(uiImages.getBigApple(), bigApple_x, bigApple_y, this);
             } else {
-                g.drawImage(apple, apple_x, apple_y, this);
+                g.drawImage(uiImages.getApple(), apple_x, apple_y, this);
             }
             scoreLabel.setText("Score: " + score);
             for (int z = 0; z < dots; z++) {
                 if (z == 0) {
-                    g.drawImage(head, x[z], y[z], this);
+                    g.drawImage(uiImages.getHead(), x[z], y[z], this);
                 } else {
-                    g.drawImage(ball, x[z], y[z], this);
+                    g.drawImage(uiImages.getBall(), x[z], y[z], this);
                 }
             }
 
