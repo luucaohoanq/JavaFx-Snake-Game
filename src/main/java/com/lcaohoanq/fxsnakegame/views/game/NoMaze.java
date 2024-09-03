@@ -3,16 +3,16 @@ package com.lcaohoanq.fxsnakegame.views.game;
 import com.lcaohoanq.fxsnakegame.constants.ResourcePaths;
 import java.io.InputStream;
 import com.lcaohoanq.fxsnakegame.styles.UISizes;
-import com.lcaohoanq.fxsnakegame.views.base.Board;
+import com.lcaohoanq.fxsnakegame.views.base.BoardView;
 
-public class NoMaze extends Board {
+public class NoMaze extends BoardView {
 
     public NoMaze() {
         super();
     }
 
     @Override
-    protected void checkCollision() {
+    public void checkCollision() {
 
         for (int z = dots; z > 0; z--) {
 
@@ -48,7 +48,7 @@ public class NoMaze extends Board {
     }
 
     @Override
-    protected void locateApple() {
+    public void locateApple() {
         if (apple_count % 5 == 0 && apple_count != 0) {
             locateBigApple();
         } else {
@@ -63,7 +63,7 @@ public class NoMaze extends Board {
     }
 
     @Override
-    protected void locateBigApple() {
+    public void locateBigApple() {
         if (isOnSound()) {
 //            audioHandler.setAudio(audioHandler.formatAudioPath(getClass().getResource(Paths.URL_BIG_APPLE_APP).getPath()));
             InputStream inputStream = getClass().getResourceAsStream(ResourcePaths.URL_BIG_APPLE_APP);

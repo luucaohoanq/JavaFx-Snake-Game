@@ -2,21 +2,21 @@ package com.lcaohoanq.fxsnakegame.views.game;
 
 import com.lcaohoanq.fxsnakegame.constants.ResourcePaths;
 import com.lcaohoanq.fxsnakegame.styles.UISizes;
-import com.lcaohoanq.fxsnakegame.views.base.Board;
+import com.lcaohoanq.fxsnakegame.views.base.BoardView;
 import java.awt.Graphics;
 import java.io.InputStream;
 
-public class Mill extends Board {
+public class Mill extends BoardView {
     protected int wallThickness = 20;
 
     public  Mill() {
         super();
 
         //adjust to prevent hitting the side wall
-        boardController.setRightDirection(false);
-        boardController.setLeftDirection(false);
-        boardController.setUpDirection(false);
-        boardController.setDownDirection(true);
+        boardKeyController.setRightDirection(false);
+        boardKeyController.setLeftDirection(false);
+        boardKeyController.setUpDirection(false);
+        boardKeyController.setDownDirection(true);
     }
 
     @Override
@@ -42,7 +42,7 @@ public class Mill extends Board {
     }
 
     @Override
-    protected void checkCollision() {
+    public void checkCollision() {
         for (int z = dots; z > 0; z--) {
 
             if ((z > 4) && (x[0] == x[z]) && (y[0] == y[z])) {
@@ -101,7 +101,7 @@ public class Mill extends Board {
     }
 
     @Override
-    protected void locateApple() {
+    public void locateApple() {
         if (apple_count % 5 == 0 && apple_count != 0) {
             locateBigApple();
         } else {
@@ -116,7 +116,7 @@ public class Mill extends Board {
     }
 
     @Override
-    protected void locateBigApple() {
+    public void locateBigApple() {
         if (isOnSound()) {
             InputStream inputStream = getClass().getResourceAsStream(ResourcePaths.URL_BIG_APPLE_APP);
             audioUtils.playAudio(inputStream);

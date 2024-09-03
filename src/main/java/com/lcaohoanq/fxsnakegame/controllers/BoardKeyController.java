@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class BoardController extends KeyAdapter {
+public class BoardKeyController extends KeyAdapter {
     // Snake movement directions
     private boolean leftDirection = false;     // Flag for moving left
     private boolean rightDirection = true;     // Flag for moving right

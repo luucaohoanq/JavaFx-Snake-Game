@@ -1,20 +1,20 @@
 package com.lcaohoanq.fxsnakegame.views.game;
 
-import com.lcaohoanq.fxsnakegame.views.base.Board;
+import com.lcaohoanq.fxsnakegame.views.base.BoardView;
 
-public class Campaign extends Board {
+public class Campaign extends BoardView {
     @Override
-    protected void checkCollision() {
+    public void checkCollision() {
 
     }
 
     @Override
-    protected void locateApple() {
+    public void locateApple() {
 
     }
 
     @Override
-    protected void locateBigApple() {
+    public void locateBigApple() {
 
     }
 }

@@ -2,38 +2,27 @@ package com.lcaohoanq.fxsnakegame.views.base;
 
 import com.lcaohoanq.fxsnakegame.constants.APIConstants;
 import com.lcaohoanq.fxsnakegame.constants.ResourcePaths;
-import com.lcaohoanq.fxsnakegame.controllers.BoardController;
+import com.lcaohoanq.fxsnakegame.controllers.BoardKeyController;
 import com.lcaohoanq.fxsnakegame.controllers.LoginController;
-import com.lcaohoanq.fxsnakegame.styles.UIBorders;
 import com.lcaohoanq.fxsnakegame.styles.UIColors;
-import com.lcaohoanq.fxsnakegame.styles.UIFonts;
 import com.lcaohoanq.fxsnakegame.styles.UIImages;
-import com.lcaohoanq.fxsnakegame.styles.UILabels;
 import com.lcaohoanq.fxsnakegame.styles.UISizes;
 import com.lcaohoanq.fxsnakegame.utils.ApiUtils;
 import com.lcaohoanq.fxsnakegame.utils.AudioUtils;
-import com.lcaohoanq.fxsnakegame.views.MenuView;
-import com.lcaohoanq.fxsnakegame.views.utils.UIPrompts;
+import com.lcaohoanq.fxsnakegame.views.game.IGameLogic;
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.InputStream;
 import java.net.http.HttpResponse;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JProgressBar;
 import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public abstract class Board extends JPanel implements ActionListener {
+public abstract class BoardView extends BoardComponent implements ActionListener, IGameLogic {
 
     // Board dimensions and settings
     protected final int DOT_SIZE = 10;        // Size of the snake's body
@@ -57,32 +46,14 @@ public abstract class Board extends JPanel implements ActionListener {
     // Game state variables
     private int score = 0;            // Player's score
     private Timer bigAppleTimer;               // Timer for big apple appearance
-    // UI components
-    private JLabel gameOverLabel;              // Label to display the "Game Over" message
-    private JPanel gameOverPanel;              // Panel for UI components at the game over
-    private JButton playAgainButton;           // Button to play the game again
-    private JButton exitButton;                // Button to exit the game
-    private JPanel playAgainExitButtonPanel;   // Panel for UI components at the game over
-    private JButton backToMainMenuButton;      // Button to go back to the main menu
-    private JPanel backToMainMenuButtonPanel;  // Panel for UI components at the game over
-    private JLabel scoreLabel;                 // Label to display the player's score
-    private int lineBottom;                    // Bottom line
-    private JProgressBar bigAppleProgressBar;  // Progress bar for big apple timer
-    private final JPanel bottomPanel = new JPanel(); // Panel for UI components at the bottom
-    private final JPanel gameOverButtonPanel = new JPanel(); // Panel for UI components at the game over
 
     protected final UIImages uiImages = new UIImages();
-    protected final BoardController boardController = new BoardController();
+    protected final BoardKeyController boardKeyController = new BoardKeyController();
 
-    public Board() {
-        initBoard();
-    }
-
-    private void initBoard() {
-        addKeyListener(boardController);
+    public BoardView() {
+        addKeyListener(boardKeyController);
         setBackground(UIColors.OTHER_OPTIONS_L);
         setFocusable(true);
-        bottomPanel.setVisible(true);
         setPreferredSize(UISizes.SIZE_BOARD);
 
         setLayout(new BorderLayout());
@@ -94,40 +65,13 @@ public abstract class Board extends JPanel implements ActionListener {
         initGameOverPanel();
     }
 
-    private void initLine() {
-        lineBottom =
-            UISizes.HEIGHT_BOARD - UISizes.LINE_SPACE_FROM_BOTTOM; // Adjust this value as needed
-    }
-
-    private void initScoreLabel() {
-        // Initialize the JLabel for live score display
-        scoreLabel = new JLabel(UILabels.SCORE_LIVE);
-        scoreLabel.setForeground(Color.white);
-        scoreLabel.setFont(UIFonts.SCORE_LIVE);
-        scoreLabel.setBounds(10, UISizes.HEIGHT_BOARD - 30, 100, 20);
-        scoreLabel.setVisible(true);
-    }
-
-    private void initProgressBar() {
-        // Initialize the JProgressBar for big apple countdown
-        bigAppleProgressBar = new JProgressBar(UISizes.MIN_PROGRESS_BAR, UISizes.MAX_PROGRESS_BAR);
-        bigAppleProgressBar.setPreferredSize(UISizes.SIZE_PROGRESS_BAR);
-        bigAppleProgressBar.setValue(100);
-        bigAppleProgressBar.setStringPainted(true);
-        bigAppleProgressBar.setForeground(UIColors.PROGRESS_BAR_LOADING);
-        bigAppleProgressBar.setBackground(UIColors.PRIMARY_COLOR_L);
-        bigAppleProgressBar.setVisible(false);
-    }
-
-    private void initBottomPanel() {
-        initScoreLabel();
-        initProgressBar();
-        bottomPanel.setLayout(new BorderLayout());
-        bottomPanel.setBackground(UIColors.OTHER_OPTIONS_L);
-        bottomPanel.setBorder(UIBorders.BOTTOM_SCORE_PROGRESS_BAR);
-        bottomPanel.add(scoreLabel, BorderLayout.WEST);
-        bottomPanel.add(bigAppleProgressBar, BorderLayout.EAST);
-        add(bottomPanel, BorderLayout.SOUTH);
+    @Override
+    protected void initPlayAgainButton() {
+        super.initPlayAgainButton();
+        playAgainButton.addActionListener(e -> {
+            // Reset game parameters and restart the game
+            SwingUtilities.invokeLater(this::resetGame);
+        });
     }
 
     protected void renderProgressBar() {
@@ -147,84 +91,7 @@ public abstract class Board extends JPanel implements ActionListener {
         progressBarTimer.start();
     }
 
-    private void initGameOverTitle() {
-        gameOverPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        gameOverLabel = new JLabel(UILabels.GAME_OVER);
-        gameOverPanel.setBackground(UIColors.OTHER_OPTIONS_L);
-        gameOverLabel.setForeground(UIColors.PRIMARY_COLOR_L);
-        gameOverLabel.setBackground(UIColors.OTHER_OPTIONS_L);
-        gameOverLabel.setFont(UIFonts.GAME_OVER);
-        gameOverLabel.setBounds((UISizes.WIDTH_BOARD - 260) / 2,
-            (UISizes.HEIGHT_BOARD - 50) / 2 - 50, 260, 50);
-        gameOverPanel.add(gameOverLabel);
-    }
 
-    private void initPlayAgainButton() {
-        playAgainButton = new JButton(UILabels.PLAY_AGAIN);
-        playAgainButton.setFont(UIFonts.PLAY_EXIT_BUTTON);
-        playAgainButton.setBackground(UIColors.TEXT_COLOR_L);
-        playAgainButton.setForeground(UIColors.PRIMARY_COLOR_L);
-        playAgainButton.setPreferredSize(UISizes.SIZE_BUTTON_GAME_OVER);
-        playAgainButton.addActionListener(e -> {
-            // Reset game parameters and restart the game
-            SwingUtilities.invokeLater(this::resetGame);
-        });
-    }
-
-    private void initExitButton() {
-        exitButton = new JButton(UILabels.EXIT);
-        exitButton.setFont(UIFonts.PLAY_EXIT_BUTTON);
-        exitButton.setBackground(UIColors.PROGRESS_BAR_LOADING);
-        exitButton.setForeground(UIColors.PRIMARY_COLOR_L);
-        exitButton.addActionListener(e -> {
-            if (UIPrompts.IS_CONFIRM_EXIT() == JOptionPane.YES_OPTION) {
-                SwingUtilities.getWindowAncestor(this).dispose();
-            }
-        });
-        exitButton.setPreferredSize(UISizes.SIZE_BUTTON_GAME_OVER);
-    }
-
-    private void initPlayAgainExitButtonPanel() {
-        initPlayAgainButton();
-        initExitButton();
-        playAgainExitButtonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        playAgainExitButtonPanel.setBackground(UIColors.OTHER_OPTIONS_L);
-        playAgainExitButtonPanel.add(playAgainButton);
-        playAgainExitButtonPanel.add(exitButton);
-    }
-
-    private void initBackToMainMenuButton() {
-        backToMainMenuButton = new JButton(UILabels.BACK_TO_MAIN_MENU);
-        backToMainMenuButton.setFont(UIFonts.PLAY_EXIT_BUTTON);
-        backToMainMenuButton.setBackground(UIColors.BACK_TO_MAIN_MENU);
-        backToMainMenuButton.setForeground(UIColors.PRIMARY_COLOR_L);
-        backToMainMenuButton.addActionListener(e -> {
-            SwingUtilities.getWindowAncestor(this).dispose();
-            new MenuView().setVisible(true);
-        });
-        backToMainMenuButton.setPreferredSize(UISizes.SIZE_BUTTON_GAME_OVER_BACK_TO_MAIN_MENU);
-    }
-
-    private void initBackToMainMenuButtonPanel() {
-        initBackToMainMenuButton();
-        backToMainMenuButtonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        backToMainMenuButtonPanel.setBackground(UIColors.OTHER_OPTIONS_L);
-        backToMainMenuButtonPanel.add(backToMainMenuButton);
-    }
-
-    private void initGameOverPanel() {
-        initGameOverTitle();
-        initPlayAgainExitButtonPanel();
-        initBackToMainMenuButtonPanel();
-        gameOverButtonPanel.setLayout(new BorderLayout());
-        gameOverButtonPanel.setBackground(UIColors.OTHER_OPTIONS_L);
-        gameOverButtonPanel.setBorder(UIBorders.GAME_OVER_ELEMENT);
-        gameOverButtonPanel.add(gameOverPanel, BorderLayout.NORTH);
-        gameOverButtonPanel.add(playAgainExitButtonPanel, BorderLayout.CENTER);
-        gameOverButtonPanel.add(backToMainMenuButtonPanel, BorderLayout.SOUTH);
-        gameOverButtonPanel.setVisible(false);
-        add(gameOverButtonPanel, BorderLayout.CENTER);
-    }
 
     private void initGame() {
 
@@ -269,10 +136,6 @@ public abstract class Board extends JPanel implements ActionListener {
             gameOver(g);
             updateScore();
         }
-    }
-
-    public int compareDatabaseAndCurrentScore(int dbScore, int currentScore) {
-        return dbScore - currentScore;
     }
 
     public void updateScore() {
@@ -325,10 +188,10 @@ public abstract class Board extends JPanel implements ActionListener {
             y[z] = 50;
         }
         // Reset any other necessary game state variables
-        boardController.setRightDirection(true);
-        boardController.setLeftDirection(false);
-        boardController.setUpDirection(false);
-        boardController.setDownDirection(false);
+        boardKeyController.setRightDirection(true);
+        boardKeyController.setLeftDirection(false);
+        boardKeyController.setUpDirection(false);
+        boardKeyController.setDownDirection(false);
         // Hide the "Play Again" button again
         playAgainButton.setVisible(false);
         exitButton.setVisible(false);
@@ -396,28 +259,22 @@ public abstract class Board extends JPanel implements ActionListener {
             y[z] = y[(z - 1)];
         }
 
-        if (boardController.isLeftDirection()) {
+        if (boardKeyController.isLeftDirection()) {
             x[0] -= DOT_SIZE;
         }
 
-        if (boardController.isRightDirection()) {
+        if (boardKeyController.isRightDirection()) {
             x[0] += DOT_SIZE;
         }
 
-        if (boardController.isUpDirection()) {
+        if (boardKeyController.isUpDirection()) {
             y[0] -= DOT_SIZE;
         }
 
-        if (boardController.isDownDirection()) {
+        if (boardKeyController.isDownDirection()) {
             y[0] += DOT_SIZE;
         }
     }
-
-    protected abstract void checkCollision();
-
-    protected abstract void locateApple();
-
-    protected abstract void locateBigApple();
 
     public void setBigAppleTime() {
         // neu ma bigAppleTimer dang null thi tao mot timer moi
