@@ -13,10 +13,10 @@ public class Mill extends Board {
         super();
 
         //adjust to prevent hitting the side wall
-        leftDirection = false;
-        rightDirection = false;
-        upDirection = false;
-        downDirection = true;
+        boardController.setRightDirection(false);
+        boardController.setLeftDirection(false);
+        boardController.setUpDirection(false);
+        boardController.setDownDirection(true);
     }
 
     @Override

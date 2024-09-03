@@ -2,6 +2,7 @@ package com.lcaohoanq.fxsnakegame.views.base;
 
 import com.lcaohoanq.fxsnakegame.constants.APIConstants;
 import com.lcaohoanq.fxsnakegame.constants.ResourcePaths;
+import com.lcaohoanq.fxsnakegame.controllers.BoardController;
 import com.lcaohoanq.fxsnakegame.controllers.LoginController;
 import com.lcaohoanq.fxsnakegame.styles.UIBorders;
 import com.lcaohoanq.fxsnakegame.styles.UIColors;
@@ -20,8 +21,6 @@ import java.awt.Graphics;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import java.io.InputStream;
 import java.net.http.HttpResponse;
 import javax.swing.JButton;
@@ -55,11 +54,6 @@ public abstract class Board extends JPanel implements ActionListener {
     // Game timers and images
     protected Timer timer;                       // Timer for regular game events
     protected AudioUtils audioUtils = AudioUtils.getInstance();
-    // Snake movement directions
-    protected boolean leftDirection = false;     // Flag for moving left
-    protected boolean rightDirection = true;     // Flag for moving right
-    protected boolean upDirection = false;       // Flag for moving up
-    protected boolean downDirection = false;     // Flag for moving down
     // Game state variables
     private int score = 0;            // Player's score
     private Timer bigAppleTimer;               // Timer for big apple appearance
@@ -78,13 +72,14 @@ public abstract class Board extends JPanel implements ActionListener {
     private final JPanel gameOverButtonPanel = new JPanel(); // Panel for UI components at the game over
 
     protected final UIImages uiImages = new UIImages();
+    protected final BoardController boardController = new BoardController();
 
     public Board() {
         initBoard();
     }
 
     private void initBoard() {
-        addKeyListener(new TAdapter());
+        addKeyListener(boardController);
         setBackground(UIColors.OTHER_OPTIONS_L);
         setFocusable(true);
         bottomPanel.setVisible(true);
@@ -330,10 +325,10 @@ public abstract class Board extends JPanel implements ActionListener {
             y[z] = 50;
         }
         // Reset any other necessary game state variables
-        rightDirection = true;
-        leftDirection = false;
-        upDirection = false;
-        downDirection = false;
+        boardController.setRightDirection(true);
+        boardController.setLeftDirection(false);
+        boardController.setUpDirection(false);
+        boardController.setDownDirection(false);
         // Hide the "Play Again" button again
         playAgainButton.setVisible(false);
         exitButton.setVisible(false);
@@ -401,19 +396,19 @@ public abstract class Board extends JPanel implements ActionListener {
             y[z] = y[(z - 1)];
         }
 
-        if (leftDirection) {
+        if (boardController.isLeftDirection()) {
             x[0] -= DOT_SIZE;
         }
 
-        if (rightDirection) {
+        if (boardController.isRightDirection()) {
             x[0] += DOT_SIZE;
         }
 
-        if (upDirection) {
+        if (boardController.isUpDirection()) {
             y[0] -= DOT_SIZE;
         }
 
-        if (downDirection) {
+        if (boardController.isDownDirection()) {
             y[0] += DOT_SIZE;
         }
     }
@@ -466,36 +461,4 @@ public abstract class Board extends JPanel implements ActionListener {
         repaint();
     }
 
-    private class TAdapter extends KeyAdapter {
-
-        @Override
-        public void keyPressed(KeyEvent e) {
-
-            int key = e.getKeyCode();
-
-            if ((key == KeyEvent.VK_LEFT) && (!rightDirection)) {
-                leftDirection = true;
-                upDirection = false;
-                downDirection = false;
-            }
-
-            if ((key == KeyEvent.VK_RIGHT) && (!leftDirection)) {
-                rightDirection = true;
-                upDirection = false;
-                downDirection = false;
-            }
-
-            if ((key == KeyEvent.VK_UP) && (!downDirection)) {
-                upDirection = true;
-                rightDirection = false;
-                leftDirection = false;
-            }
-
-            if ((key == KeyEvent.VK_DOWN) && (!upDirection)) {
-                downDirection = true;
-                rightDirection = false;
-                leftDirection = false;
-            }
-        }
-    }
 }
