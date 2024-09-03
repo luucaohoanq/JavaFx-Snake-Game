@@ -1,4 +1,4 @@
-![Animation](https://github.com/lcaohoanq/Java-Snake-Game/assets/136492579/1c4782eb-ccf4-437e-a6b1-900ec68a58a3)
+![image](https://github.com/user-attachments/assets/62585ee3-7f09-4167-9ae4-b576a6afee3b)
 
 ## [Update] I'm developing the Spring Backend at repo below, you can clone and run alongside with this JavaFx project
 - https://github.com/lcaohoanq/SpringBoot-Snake-Game
