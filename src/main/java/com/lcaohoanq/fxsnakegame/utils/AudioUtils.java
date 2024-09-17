@@ -30,18 +30,23 @@ public class AudioUtils {
         return instance;
     }
 
+    private byte[] getAudioData(InputStream inputStream) {
+        try {
+            return inputStream.readAllBytes();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+
     public void playAudio(InputStream inputStream) {
         try {
             if (inputStreamCurrent != null) {
                 throw new ResourceNotFoundException("Audio file is missing");
             }
-            // Create a byte array to store the audio data
-            byte[] audioData = inputStream.readAllBytes();
-
             // Use ByteArrayInputStream to create an AudioInputStream
-            ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(audioData);
+            ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(getAudioData(inputStream));
             audioInputStream = AudioSystem.getAudioInputStream(byteArrayInputStream);
-
             clip = AudioSystem.getClip();
             clip.open(audioInputStream);
             clip.start();
@@ -49,6 +54,5 @@ public class AudioUtils {
             System.out.println(e.getMessage());
         }
     }
-
 
 }

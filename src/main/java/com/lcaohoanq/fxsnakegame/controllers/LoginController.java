@@ -14,8 +14,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyCode;
 import javafx.event.ActionEvent;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import lombok.AllArgsConstructor;
@@ -33,11 +33,11 @@ import java.net.URI;
 public class LoginController extends AppFxBaseResources {
 
     @FXML
-    private TextField usernameTextField;
+    public TextField usernameTextField;
     @FXML
-    private PasswordField enterPasswordField;
+    public PasswordField enterPasswordField;
     @FXML
-    private Button loginButton;
+    public Button loginButton;
     public static String email = "";
     private String password = "";
 

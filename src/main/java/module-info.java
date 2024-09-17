@@ -35,4 +35,5 @@ module com.lcaohoanq.fxsnakegame {
     opens com.lcaohoanq.fxsnakegame.views.otpverification to javafx.fxml;
     opens com.lcaohoanq.fxsnakegame.views.score to javafx.fxml;
     exports com.lcaohoanq.fxsnakegame.views.score;
+//    opens com.lcaohoanq.fxsnakegame to org.testfx;
 }
