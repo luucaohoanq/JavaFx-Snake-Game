@@ -1,22 +1,24 @@
 package utils;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import io.github.cdimascio.dotenv.Dotenv;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 public class EnvUtilsTest {
-    private Dotenv dotenv;
     private final String DB_URL_DOCKER = "jdbc:mysql://localhost:3307/snake_game_app";
+    private Dotenv dotenv;
 
     @BeforeEach
     public void setUp() {
-        dotenv = Dotenv.configure().load();
+        dotenv = Dotenv.configure().ignoreIfMissing().load();
     }
 
     @Test
     public void testGet() {
-        assertEquals(DB_URL_DOCKER, dotenv.get("DB_URL_DOCKER"));
+        String envValue = dotenv.get("DB_URL_DOCKER", System.getenv("DB_URL_DOCKER"));
+        assertNotNull(envValue, "DB_URL_DOCKER environment variable should be set");
+        assertEquals(DB_URL_DOCKER, envValue);
     }
 }
